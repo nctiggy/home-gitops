@@ -1,8 +1,5 @@
 git:
   url: "git@github.com:nctiggy/home-gitops"
-image:
-  repository: docker.io/fluxcd/flux
-  tag: 1.20.1
 additionalArgs:
 - --connect=ws://fluxcloud
 prometheus:
