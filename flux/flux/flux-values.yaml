@@ -1,0 +1,21 @@
+helmOperator:
+  create: false
+git:
+  url: "git@github.com:nctiggy/home-gitops"
+image:
+  repository: docker.io/fluxcd/flux
+  tag: 1.20.1
+additionalArgs:
+- --connect=ws://fluxcloud
+prometheus:
+  enabled: true
+  serviceMonitor:
+    create: true
+    interval: 30s
+    scrapeTimeout: 10s
+    namespace: flux
+syncGarbageCollection:
+  enabled: true
+  dry: false
+dashboards:
+  enabled: true
