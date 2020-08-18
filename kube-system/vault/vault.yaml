@@ -1,0 +1,20 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: vault
+  namespace: kube-system
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/tag.chart-image: semver:~1.5
+spec:
+  releaseName: vault
+  rollback:
+    enabled: false
+  chart:
+    repository: https://helm.releases.hashicorp.com
+    name: vault
+    ref: v0.6.0
+    path: .
+  valuesFrom:
+  - externalSourceRef:
+      url: https://raw.githubusercontent.com/nctiggy/home-gitops/master/kube-system/vault/vault-values.yaml

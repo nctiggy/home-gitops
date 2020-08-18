@@ -1,5 +1,3 @@
-helmOperator:
-  create: false
 git:
   url: "git@github.com:nctiggy/home-gitops"
 image:

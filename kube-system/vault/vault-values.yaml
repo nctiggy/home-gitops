@@ -1,0 +1,40 @@
+server:
+  extraEnvironmentVars:
+    GOOGLE_APPLICATION_CREDENTIALS: /vault/userconfig/kms-vault/account.json
+  extraVolumes:
+    - type: secret
+      name: kms-vault
+      path: /vault/userconfig
+  annotations:
+    backup.velero.io/backup-volumes: data
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 250m
+    limits:
+      memory: 256Mi
+  standalone:
+    enabled: "false"
+  ha:
+    enabled: "true"
+    raft:
+      enabled: true
+      setNodeId: true
+      config: |
+        ui = true
+        listener "tcp" {
+          tls_disable = 1
+          address = "[::]:8200"
+          cluster_address = "[::]:8201"
+        }
+        storage "raft" {
+          path = "/vault/data"
+        }
+        seal "gcpckms" {
+          project     = "home-gitops"
+          region      = "global"
+          key_ring    = "vault-unseal"
+          crypto_key  = "vault-key"
+        }
+ui:
+  enabled: true
