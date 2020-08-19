@@ -16,3 +16,6 @@ spec:
     repository: https://helm.influxdata.com/
     name: influxdb
     version: 4.8.2
+  valuesFrom:
+  - externalSourceRef:
+      url: https://raw.githubusercontent.com/nctiggy/home-gitops/master/monitoring/influxdb/influxdb-values.yaml

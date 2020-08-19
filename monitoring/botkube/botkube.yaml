@@ -14,3 +14,8 @@ spec:
     repository: https://infracloudio.github.io/charts
     name: botkube
     version: v0.10.0
+  valuesFrom:
+  - externalSourceRef:
+      url: https://raw.githubusercontent.com/nctiggy/home-gitops/master/monitoring/botkube/botkube-values.yaml
+  valueFileSecrets:
+  - name: "botkube-secret"

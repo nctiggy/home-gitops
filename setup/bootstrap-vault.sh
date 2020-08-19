@@ -196,7 +196,7 @@ loadSecretsToVault() {
   kvault "velero/velero/velero-helm-values.txt"
 }
 
-FIRST_RUN=0
+FIRST_RUN=1
 export KUBECONFIG="$REPO_ROOT/setup/kubeconfig"
 export VAULT_ADDR='http://127.0.0.1:8200'
 
@@ -207,6 +207,7 @@ if [ $FIRST_RUN == 0 ]; then
   setupVaultSecretsOperator
 fi
 vault kv put secrets/flux/fluxcloud slack_url="$SLACK_WEBHOOK_URL"
+kvault "monitoring/botkube/botkube-secret.txt"
 #loadSecretsToVault
 
 kill $VAULT_FWD_PID
