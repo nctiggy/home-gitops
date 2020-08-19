@@ -1,0 +1,19 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: flux
+  namespace: flux
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: glob:1.20.*
+spec:
+  releaseName: flux
+  helmVersion: v3
+  chart:
+    repository: https://charts.fluxcd.io/
+    name: flux
+    version: 1.4.1
+  valuesFrom:
+  - externalSourceRef:
+      url: https://raw.githubusercontent.com/nctiggy/home-gitops/master/flux/flux/flux-values.yaml
