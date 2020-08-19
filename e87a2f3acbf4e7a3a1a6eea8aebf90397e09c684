@@ -1,0 +1,1 @@
+{"jobID":"4ca8f232-29af-6f3d-c0cf-2ec8968ba6db","spec":{"type":"policy","cause":{"Message":"","User":""},"spec":{"kube-system:helmrelease/vault-secrets-operator":{"add":{"locked":"true"},"remove":{}}}},"result":null}
