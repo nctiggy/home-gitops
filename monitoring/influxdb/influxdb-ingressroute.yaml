@@ -1,0 +1,31 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: influxdb-dashboard-tls
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`influxdb.web.bluehairfreak.com`)
+      kind: Rule
+      services:
+        - name: influxdb
+          port: 8086
+          namespace: monitoring
+  tls:
+    certResolver: myresolver
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: influxdb-dashboard
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`influxdb.web.bluehairfreak.com`)
+      kind: Rule
+      services:
+        - name: influxdb
+          port: 8086
+          namespace: monitoring
