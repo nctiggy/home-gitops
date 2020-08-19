@@ -6,7 +6,7 @@ metadata:
   namespace: flux
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: glob:1.20.*
+    filter.fluxcd.io/chart-image: semver:~1.20.
 spec:
   releaseName: flux
   helmVersion: v3
@@ -14,6 +14,23 @@ spec:
     repository: https://charts.fluxcd.io/
     name: flux
     version: 1.4.1
-  valuesFrom:
-  - externalSourceRef:
-      url: https://raw.githubusercontent.com/nctiggy/home-gitops/master/flux/flux/flux-values.yaml
+  values:
+    image:
+      repository: docker.io/fluxcd/flux
+      tag: 1.20.1
+      pullPolicy: IfNotPresent
+    git:
+      url: "git@github.com:nctiggy/home-gitops"
+    additionalArgs:
+    - --connect=ws://fluxcloud
+    prometheus:
+      enabled: true
+      serviceMonitor:
+        create: true
+        interval: 30s
+        scrapeTimeout: 10s
+        namespace: flux
+    syncGarbageCollection:
+      enabled: true
+    dashboards:
+      enabled: true
