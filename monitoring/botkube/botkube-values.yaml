@@ -6,6 +6,8 @@ serviceMonitor:
 config:
   settings:
     clustername: kubernetes
+    allowkubectl: true
+    restrictAccess: false
   resources:
     - name: pod                # Name of the resources e.g pod, deployment, ingress, etc. (Resource name must be in singular form)
       namespaces:
