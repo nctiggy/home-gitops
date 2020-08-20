@@ -3,6 +3,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: sonarr-dashboard-tls
+  namespace: media
 spec:
   entryPoints:
     - websecure
@@ -12,6 +13,7 @@ spec:
       services:
         - name: sonarr
           port: 8989
+          namespace: media
   tls:
     certResolver: myresolver
 ---
@@ -19,6 +21,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: sonarr-dashboard
+  namespace: media
 spec:
   entryPoints:
     - web
@@ -28,3 +31,4 @@ spec:
       services:
         - name: sonarr
           port: 8989
+          namespace: media
