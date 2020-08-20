@@ -6,7 +6,7 @@ metadata:
   namespace: kube-system
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/tag.chart-image: semver:~1.5
+    filter.fluxcd.io/server: semver:~1
 spec:
   releaseName: vault
   rollback:
@@ -15,6 +15,47 @@ spec:
     repository: https://helm.releases.hashicorp.com
     version: 0.6.0
     name: vault
-  valuesFrom:
-  - externalSourceRef:
-      url: https://raw.githubusercontent.com/nctiggy/home-gitops/master/kube-system/vault/vault-values.yaml
+  values:
+    server:
+      image:
+        repository: "vault"
+        tag: "1.4.2"
+        # Overrides the default Image Pull Policy
+        pullPolicy: IfNotPresent
+      dataStorage:
+        enabled: true
+      extraEnvironmentVars:
+        GOOGLE_APPLICATION_CREDENTIALS: /vault/userconfig/kms-vault/account.json
+      extraVolumes:
+        - type: secret
+          name: kms-vault
+          path: /vault/userconfig
+      annotations:
+        backup.velero.io/backup-volumes: data
+      standalone:
+        enabled: "false"
+      ha:
+        enabled: "true"
+        replicas: 3
+        raft:
+          enabled: true
+          setNodeId: true
+          config: |
+            ui = true
+            listener "tcp" {
+              tls_disable = 1
+              address = "[::]:8200"
+              cluster_address = "[::]:8201"
+            }
+            storage "raft" {
+              path = "/vault/data"
+            }
+            seal "gcpckms" {
+              project     = "home-gitops"
+              region      = "global"
+              key_ring    = "vault-unseal"
+              crypto_key  = "vault-key"
+            }
+    ui:
+      enabled: true
+      serviceType: "ClusterIP"
