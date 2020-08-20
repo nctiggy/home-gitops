@@ -20,7 +20,7 @@ spec:
   values:
     image:
       repository: infracloudio/botkube
-      tag: teams
+      tag: v0.10.0
     serviceMonitor:
       enabled: true
     config:
