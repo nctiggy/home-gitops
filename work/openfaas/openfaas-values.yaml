@@ -1,0 +1,8 @@
+gateway:
+  image: openfaas/gateway:0.18.18
+faasnetes:
+  image: openfaas/faas-netes:0.12.2
+  imagePullPolicy : "Always"
+basic_auth: true
+exposeServices: false
+generateBasicAuth: true
