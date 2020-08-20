@@ -19,7 +19,7 @@ spec:
     server:
       image:
         repository: "vault"
-        tag: "1.4.2"
+        tag: "1.5.0"
         # Overrides the default Image Pull Policy
         pullPolicy: IfNotPresent
       updateStrategyType: "RollingUpdate"
@@ -28,9 +28,9 @@ spec:
       extraEnvironmentVars:
         GOOGLE_APPLICATION_CREDENTIALS: /vault/userconfig/kms-vault/account.json
       extraVolumes:
-        - type: secret
-          name: kms-vault
-          path: /vault/userconfig
+      - type: secret
+        name: kms-vault
+        path: /vault/userconfig
       annotations:
         backup.velero.io/backup-volumes: data
       standalone:
