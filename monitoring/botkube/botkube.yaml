@@ -6,6 +6,7 @@ metadata:
   namespace: monitoring
   annotations:
     fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: glob:v0.10.*
 spec:
   releaseName: botkube
   rollback:
