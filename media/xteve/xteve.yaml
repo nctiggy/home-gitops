@@ -1,0 +1,32 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: xteve
+  namespace: media
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: semver:2.1
+spec:
+  releaseName: xteve
+  helmVersion: v3
+  rollback:
+    enable: true
+  chart:
+    repository: https://billimek.com/billimek-charts/
+    name: xteve
+    version: 1.0.0
+  values:
+    image:
+      repository: tnwhitwell/xteve
+      tag: 2.1.2.0121-alpine3.12.0-curl
+      pullPolicy: IfNotPresent
+    timezone: "America/Los_Angeles"
+    podAnnotations:
+      backup.velero.io/backup-volumes: config
+    persistence:
+      config:
+        enabled: true
+        size: 64Gi
+        existingClaim: xteve-config
+        skipuninstall: true
