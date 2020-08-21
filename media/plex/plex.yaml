@@ -1,0 +1,35 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: plex
+  namespace: default
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: semver:~1
+spec:
+  releaseName: plex
+  helmVersion: v3
+  rollback:
+    enable: false
+  chart:
+    repository: https://billimek.com/billimek-charts/
+    name: plex
+    version: 1.7.2
+  values:
+    image:
+      tag: "1.19.5.3112-b23ab3896"
+    timezone: "Americas/Los_Angeles"
+    claimToken: "claim-McymggV8z8_fHEz8jU1g"
+    advertiseIp: "http://192.168.0.52:32400"
+    serviceTCP:
+      type: LoadBalancer
+      loadBalancerIP: "192.168.0.52"
+    serviceUDP:
+      type: LoadBalancer
+    persistence:
+      data:
+        existingClaim: "nfs-pvc"
+        claimName: "nfs-pvc"
+      config:
+        claimName: "plex-config"
