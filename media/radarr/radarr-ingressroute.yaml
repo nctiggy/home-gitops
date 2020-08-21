@@ -1,0 +1,32 @@
+# dashboard.yaml
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: radarr-dashboard-tls
+  namespace: media
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`movies.web.bluehairfreak.com`)
+      kind: Rule
+      services:
+        - name: radarr
+          port: 7878
+  tls:
+    certResolver: myresolver
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: radarr-dashboard
+  namespace: media
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`movies.web.bluehairfreak.com`)
+      kind: Rule
+      services:
+        - name: radarr
+          port: 7878
