@@ -29,12 +29,6 @@ spec:
           volumeMounts:
             - name: data
               mountPath: /data
-    ingressRoute:
-      dashboard:
-        enabled: false
-    providers:
-      kubernetesIngress:
-        enabled: false
     additionalArguments:
       - "--certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web"
       - "--certificatesresolvers.myresolver.acme.storage=/data/acme.json"
