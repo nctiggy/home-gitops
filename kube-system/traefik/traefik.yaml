@@ -40,7 +40,6 @@ spec:
       - "--certificatesresolvers.myresolver.acme.storage=/data/acme.json"
     persistence:
       enabled: true
-      existingClaim: traefik
       size: 8Gi
   valueFileSecrets:
     - name: "traefik-values"
