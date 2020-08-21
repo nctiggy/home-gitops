@@ -1,0 +1,35 @@
+# dashboard.yaml
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-dashboard
+  namespace: kube-system
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`proxy.web.bluehairfreak.com`)
+      kind: Rule
+      services:
+        - name: api@internal
+          kind: TraefikService
+          namespace: kube-system
+---
+# dashboard.yaml
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-tls-dashboard
+  namespace: kube-system
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`proxy.web.bluehairfreak.com`)
+      kind: Rule
+      services:
+        - name: api@internal
+          kind: TraefikService
+          namespace: kube-system
+  tls:
+    certResolver: myresolver
