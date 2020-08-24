@@ -1,0 +1,34 @@
+# dashboard.yaml
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: esphome-dashboard-tls
+  namespace: iot
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`esphome.web.bluehairfreak.com`)
+      kind: Rule
+      services:
+        - name: esphome
+          port: 6052
+          namespace: iot
+  tls:
+    certResolver: myresolver
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: esphome-dashboard
+  namespace: iot
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`esphome.web.bluehairfreak.com`)
+      kind: Rule
+      services:
+        - name: esphome
+          port: 6052
+          namespace: iot
