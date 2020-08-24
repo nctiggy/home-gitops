@@ -15,7 +15,7 @@ spec:
   chart:
     repository: https://billimek.com/billimek-charts/
     name: esphome
-    version: 1.0.1
+    version: 1.0.0
   values:
     image:
       repository: esphome/esphome
