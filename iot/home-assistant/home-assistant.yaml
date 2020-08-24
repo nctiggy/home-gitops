@@ -1,0 +1,48 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: home-assistant
+  namespace: default
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: semver:~0.
+spec:
+  releaseName: home-assistant
+  rollback:
+    enable: true
+  chart:
+    repository: https://billimek.com/billimek-charts/
+    name: home-assistant
+    version: 1.2.0
+  values:
+    image:
+      repository: homeassistant/home-assistant
+      tag: 0.114.3
+    persistence:
+      enabled: true
+      existingClaim: home-assistant
+    service:
+      type: LoadBalancer
+      loadBalancerIP: 192.168.0.53
+    hostNetwork: true
+    probes:
+      liveness:
+        enabled: false
+      readiness:
+        enabled: false
+    podAnnotations:
+      backup.velero.io/backup-volumes: config
+    monitoring:
+      enabled: false
+    postgresql:
+      enabled: true
+      global:
+        postgresql:
+          postgresqlUsername: home-assistant
+          postgresqlDatabase: home-assistant
+      persistence:
+        enabled: true
+        existingClaim: home-assistant-postgresql
+  valueFileSecrets:
+  - name: "home-assistant-values"

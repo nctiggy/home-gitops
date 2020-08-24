@@ -1,0 +1,7 @@
+postgresql:
+  global:
+    postgresql:
+      postgresqlPassword: $HASS_DB_PASSWORD
+configurator:
+  hassApiPassword: $HASS_API_PASSWORD
+  hassApiUrl: https://hass.$DOMAIN/api/
