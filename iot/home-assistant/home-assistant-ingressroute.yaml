@@ -3,6 +3,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: home-assistant-dashboard-tls
+  namespace: iot
 spec:
   entryPoints:
     - websecure
@@ -43,6 +44,7 @@ spec:
       services:
         - name: home-assistant
           port: 3218
+          namespace: iot
   tls:
     certResolver: myresolver
 ---
@@ -50,6 +52,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: home-assistant-config
+  namespace: iot
 spec:
   entryPoints:
     - web
@@ -59,3 +62,4 @@ spec:
       services:
         - name: home-assistant
           port: 3218
+          namespace: iot
