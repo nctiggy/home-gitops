@@ -1,4 +1,4 @@
- flux --values "$REPO_ROOT"/flux/flux/flux-values.yaml --namespace flux fluxcd/flux#!/bin/bash
+#!/bin/bash
 
 REPO_ROOT=$(git rev-parse --show-toplevel)
 
@@ -21,6 +21,7 @@ installFlux() {
   kubectl create namespace flux
   kubectl apply -f https://raw.githubusercontent.com/fluxcd/helm-operator/master/deploy/crds.yaml
   helm repo add fluxcd https://charts.fluxcd.io
+  helm repo update
   helm upgrade --install flux --values "$REPO_ROOT"/flux/flux/flux-helm-values.yaml --namespace flux fluxcd/flux
   helm upgrade --install helm-operator --values "$REPO_ROOT"/flux/helm-operator/flux-helm-operator-values.yaml --namespace flux fluxcd/helm-operator
 
