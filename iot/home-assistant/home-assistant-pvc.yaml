@@ -1,23 +1,23 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: esphome-config
-  namespace: iot
   annotations:
     helm.sh/resource-policy: keep
-    meta.helm.sh/release-name: esphome
+    meta.helm.sh/release-name: home-assistant
     meta.helm.sh/release-namespace: iot
   labels:
-    app.kubernetes.io/instance: esphome
+    app.kubernetes.io/instance: home-assistant
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/name: esphome
-    helm.sh/chart: esphome-1.0.1
+    app.kubernetes.io/name: home-assistant
+    helm.sh/chart: home-assistant-1.2.0
+  name: home-assistant
+  namespace: iot
 spec:
   accessModes:
   - ReadWriteOnce
   resources:
     requests:
-      storage: 56Gi
+      storage: 64Gi
   storageClassName: vxflexos
   volumeMode: Filesystem
-  volumeName: k8s-d846594420
+  volumeName: k8s-15ec084516

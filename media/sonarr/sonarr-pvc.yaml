@@ -1,14 +1,16 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: home-assistant-postgresql
-  namespace: iot
+  name: sonarr-config
+  namespace: media
+  annotations:
+    helm.sh/resource-policy: keep
 spec:
   accessModes:
   - ReadWriteOnce
   resources:
     requests:
-      storage: 96Gi
+      storage: 56Gi
   storageClassName: vxflexos
   volumeMode: Filesystem
-  volumeName: k8s-d8e77540c7
+  volumeName: k8s-66bd22879d
