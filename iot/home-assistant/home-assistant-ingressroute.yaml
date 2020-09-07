@@ -13,6 +13,7 @@ spec:
       services:
         - name: home-assistant
           port: 8123
+          namespace: iot
   tls:
     certResolver: myresolver
 ---
@@ -20,6 +21,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: home-assistant-dashboard
+  namespace: iot
 spec:
   entryPoints:
     - web
@@ -29,12 +31,14 @@ spec:
       services:
         - name: home-assistant
           port: 8123
+          namespace: iot
 # dashboard.yaml
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: home-assistant-config-tls
+  namespace: iot
 spec:
   entryPoints:
     - websecure
