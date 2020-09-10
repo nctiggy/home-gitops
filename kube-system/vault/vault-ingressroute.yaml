@@ -10,7 +10,7 @@ spec:
     - match: Host(`vault.web.bluehairfreak.com`)
       kind: Rule
       services:
-        - name: vault
+        - name: vault-active
           port: 8200
           namespace: kube-system
   tls:
@@ -28,6 +28,6 @@ spec:
     - match: Host(`vault.web.bluehairfreak.com`)
       kind: Rule
       services:
-        - name: vault
+        - name: vault-active
           port: 8200
           namespace: kube-system
