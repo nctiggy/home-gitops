@@ -207,6 +207,7 @@ if [ $FIRST_RUN == 0 ]; then
   setupVaultSecretsOperator
 fi
 vault kv put secrets/flux/fluxcloud slack_url="$SLACK_WEBHOOK_URL"
+kvault "kube-system/traefik/traefik-secret.txt"
 kvault "monitoring/botkube/botkube-secret.txt"
 #loadSecretsToVault
 
