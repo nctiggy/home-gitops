@@ -15,12 +15,10 @@ spec:
     version: 1.4.2
   values:
     expose:
-      tls:
-        enabled: false
       ingerss:
         hosts:
-          core: harbor.192.168.0.54.xip.io
-          notary: harbor-notary.192.168.0.54.xip.io
-    externalURL: http://harbor.192.168.0.54.xip.io
+          core: "harbor.192.168.0.54.xip.io"
+          notary: "harbor-notary.192.168.0.54.xip.io"
+    externalURL: "https://harbor.192.168.0.54.xip.io"
     updateStrategy:
       type: Recreate
