@@ -22,3 +22,17 @@ spec:
     externalURL: "https://harbor.192.168.0.54.xip.io"
     updateStrategy:
       type: Recreate
+    persistence:
+      persistentVolumeClaim:
+        registry:
+          existingClaim: harbor-harbor-registry
+        chartmuseum:
+          existingClaim: harbor-harbor-chartmuseum
+        jobservice:
+          existingClaim: harbor-harbor-jobservice
+        database:
+          existingClaim: database-data-harbor-harbor-database-0
+        redis:
+          existingClaim: data-harbor-harbor-redis-0
+        trivy:
+          existingClaim: data-harbor-harbor-trivy-0
