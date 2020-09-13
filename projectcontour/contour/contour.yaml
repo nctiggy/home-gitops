@@ -2,37 +2,14 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: harbor
-  namespace: harbor
+  name: contour
+  namespace: projectcontour
 spec:
-  releaseName: harbor
+  releaseName: contour
   helmVersion: v3
   rollback:
     enable: true
   chart:
-    repository: https://helm.goharbor.io
-    name: harbor
-    version: 1.4.2
-  values:
-    expose:
-      ingress:
-        hosts:
-          core: "harbor.192.168.0.54.xip.io"
-          notary: "harbor-notary.192.168.0.54.xip.io"
-    externalURL: "https://harbor.192.168.0.54.xip.io"
-    updateStrategy:
-      type: Recreate
-    persistence:
-      persistentVolumeClaim:
-        registry:
-          existingClaim: harbor-harbor-registry
-        chartmuseum:
-          existingClaim: harbor-harbor-chartmuseum
-        jobservice:
-          existingClaim: harbor-harbor-jobservice
-        database:
-          existingClaim: database-data-harbor-harbor-database-0
-        redis:
-          existingClaim: data-harbor-harbor-redis-0
-        trivy:
-          existingClaim: data-harbor-harbor-trivy-0
+    repository: https://charts.bitnami.com/bitnami
+    name: contour
+    version: 2.0.0
