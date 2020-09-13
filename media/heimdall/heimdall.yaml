@@ -1,0 +1,29 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: heimdall
+  namespace: media
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: semver:2.2
+spec:
+  releaseName: heimdall
+  helmVersion: v3
+  rollback:
+    enable: true
+  chart:
+    repository: https://billimek.com/billimek-charts/
+    name: heimdall
+    version: 1.0.3
+  values:
+    image:
+      repository: linuxserver/heimdall
+      tag: "2.2.2-ls84"
+    podAnnotations:
+      backup.velero.io/backup-volumes: config
+    persistence:
+      config:
+        enabled: true
+        #existingClaim: heimdall-config
+        skipuninstall: true
