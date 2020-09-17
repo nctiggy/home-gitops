@@ -13,7 +13,13 @@ spec:
       services:
         - name: api@internal
           kind: TraefikService
-          namespace: kube-system
+          namespace: default
+    - match: Host(`proxy.web.craigcloud.io`)
+      kind: Rule
+      services:
+        - name: api@internal
+          kind: TraefikService
+          namespace: default
 ---
 # dashboard.yaml
 apiVersion: traefik.containo.us/v1alpha1
@@ -30,6 +36,12 @@ spec:
       services:
         - name: api@internal
           kind: TraefikService
-          namespace: kube-system
+          namespace: default
+    - match: Host(`proxy.web.craigcloud.io`)
+      kind: Rule
+      services:
+        - name: api@internal
+          kind: TraefikService
+          namespace: default
   tls:
     certResolver: myresolver

@@ -1,0 +1,25 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: metallb
+  namespace: metallb-system
+  annotations:
+    fluxcd.io/automated: "false"
+    filter.fluxcd.io/chart-image: semver:3.0
+spec:
+  releaseName: metallb
+  helmVersion: v3
+  rollback:
+    enable: true
+  chart:
+    repository: https://charts.bitnami.com/bitnami
+    name: metallb
+    version: 0.1.23
+  values:
+    configInline:
+      address-pools:
+      - name: default
+        protocol: layer2
+        addresses:
+        - 192.168.0.50-192.168.0.59

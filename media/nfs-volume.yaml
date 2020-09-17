@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv
+spec:
+  storageClassName: nfs-dynamic
+  capacity:
+    storage: 16Ti
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  mountOptions:
+    - hard
+    - nfsvers=4
+    - nolock
+  nfs:
+    path: /
+    server: nfs-server.default.svc.cluster.local
+    readOnly: false
+

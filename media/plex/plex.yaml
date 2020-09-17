@@ -32,4 +32,4 @@ spec:
         existingClaim: "nfs-pvc"
         claimName: "nfs-pvc"
       config:
-        claimName: "plex-config"
+        #claimName: "plex-config"

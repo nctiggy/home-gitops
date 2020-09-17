@@ -25,7 +25,7 @@ spec:
       backup.velero.io/backup-volumes: config
     persistence:
       config:
-        existingClaim: sonarr-config
+        #        existingClaim: sonarr-config
         skipuninstall: true
       media:
         existingClaim: nfs-pvc
