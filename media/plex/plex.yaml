@@ -30,5 +30,6 @@ spec:
     persistence:
       data:
         existingClaim: "nfs-pvc"
-        #config:
-        #claimName: "plex-config"
+        claimName: "nfs-pvc"
+      config:
+        claimName: "plex-config"
