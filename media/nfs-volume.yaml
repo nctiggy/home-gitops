@@ -15,6 +15,6 @@ spec:
     - nolock
   nfs:
     path: /
-    server: nfs-server.default.svc.cluster.local
+    server: nfs-server
     readOnly: false
 
