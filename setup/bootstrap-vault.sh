@@ -196,7 +196,7 @@ loadSecretsToVault() {
   kvault "velero/velero/velero-helm-values.txt"
 }
 
-FIRST_RUN=1
+FIRST_RUN=0
 export KUBECONFIG="$REPO_ROOT/setup/kubeconfig"
 export VAULT_ADDR='http://127.0.0.1:8200'
 

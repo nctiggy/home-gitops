@@ -21,7 +21,7 @@ spec:
       tag: 0.114.4
     persistence:
       enabled: true
-      existingClaim: home-assistant
+      #      existingClaim: home-assistant
     service:
       type: LoadBalancer
       loadBalancerIP: 192.168.0.53
@@ -43,7 +43,7 @@ spec:
           postgresqlDatabase: home-assistant
       persistence:
         enabled: true
-        existingClaim: home-assistant-postgresql
+        #        existingClaim: home-assistant-postgresql
     configurator:
       enabled: true
       ingress:
