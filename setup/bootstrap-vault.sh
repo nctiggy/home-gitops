@@ -197,7 +197,7 @@ loadSecretsToVault() {
 }
 
 FIRST_RUN=0
-export KUBECONFIG="$REPO_ROOT/setup/kubeconfig"
+#export KUBECONFIG="$REPO_ROOT/setup/kubeconfig"
 export VAULT_ADDR='http://127.0.0.1:8200'
 
 initVault
@@ -206,6 +206,7 @@ loginVault
 if [ $FIRST_RUN == 0 ]; then
   setupVaultSecretsOperator
 fi
+message "writing secrets to vault"
 vault kv put secrets/flux/fluxcloud slack_url="$SLACK_WEBHOOK_URL"
 kvault "kube-system/traefik/traefik-secret.txt"
 kvault "monitoring/botkube/botkube-secret.txt"

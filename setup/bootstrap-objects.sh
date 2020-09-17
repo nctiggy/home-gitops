@@ -31,7 +31,7 @@ installManualObjects(){
   kubectl -n kube-system create secret generic kms-vault --from-literal=account.json="$(echo $VAULT_KMS_ACCOUNT_JSON | base64 --decode)"
 }
 
-export KUBECONFIG="$REPO_ROOT/setup/kubeconfig"
+#export KUBECONFIG="$REPO_ROOT/setup/kubeconfig"
 installManualObjects
 
 message "all done!"

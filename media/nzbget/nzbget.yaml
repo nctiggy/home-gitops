@@ -22,7 +22,7 @@ spec:
     timezone: "America/Los_Angeles"
     persistence:
       config:
-        #existingClaim: nzbget-config
+        existingClaim: nzbget-config
         skipuninstall: true
       downloads:
         existingClaim: nfs-pvc

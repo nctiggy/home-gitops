@@ -27,6 +27,7 @@ spec:
       config:
         enabled: true
         skipuninstall: true
+        existingClaim: radarr-config
       media:
         enabled: true
         existingClaim: nfs-pvc
