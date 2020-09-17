@@ -20,7 +20,7 @@ spec:
     image:
       tag: "1.19.5.3112-b23ab3896"
     timezone: "Americas/Los_Angeles"
-    claimToken: "claim-McymggV8z8_fHEz8jU1g"
+    claimToken: "claim-13rAA1bcuxAf2NtVGZE8"
     advertiseIp: "http://192.168.0.52:32400"
     serviceTCP:
       type: LoadBalancer
