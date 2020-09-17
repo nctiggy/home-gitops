@@ -35,5 +35,8 @@ spec:
     persistence:
       enabled: true
       size: 8Gi
-  valueFileSecrets:
-    - name: "traefik-values"
+  service:
+    enabled: true
+    type: LoadBalancer
+    externalIPs:
+    - 192.168.0.50
