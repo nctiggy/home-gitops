@@ -21,8 +21,6 @@ spec:
     image:
       repository: infracloudio/botkube
       tag: v0.10.0
-    serviceMonitor:
-      enabled: true
     config:
       settings:
         clustername: kubernetes
@@ -43,7 +41,7 @@ spec:
           include:
           - all
           ignore:
-          - 
+          -
         events:
         - create
         - delete
@@ -53,7 +51,7 @@ spec:
           include:
           - all
           ignore:
-          - 
+          -
         events:
         - create
         - update
@@ -68,7 +66,7 @@ spec:
           include:
           - all
           ignore:
-          - 
+          -
         events:
         - create
         - update
@@ -83,7 +81,7 @@ spec:
           include:
           - all
           ignore:
-          - 
+          -
         events:
         - create
         - delete
@@ -93,7 +91,7 @@ spec:
           include:
           - all
           ignore:
-          - 
+          -
         events:
         - create
         - delete
@@ -103,7 +101,7 @@ spec:
           include:
           - all
           ignore:
-          - 
+          -
         events:
         - create
         - delete
@@ -113,7 +111,7 @@ spec:
           include:
           - all
           ignore:
-          - 
+          -
         events:
         - create
         - delete
@@ -123,7 +121,7 @@ spec:
           include:
           - all
           ignore:
-          - 
+          -
         events:
         - create
         - delete
@@ -133,7 +131,7 @@ spec:
           include:
           - all
           ignore:
-          - 
+          -
         events:
         - create
         - delete
@@ -143,7 +141,7 @@ spec:
           include:
           - all
           ignore:
-          - 
+          -
         events:
         - delete
         - error
@@ -152,7 +150,7 @@ spec:
           include:
           - all
           ignore:
-          - 
+          -
         events:
         - create
         - delete
@@ -183,7 +181,7 @@ spec:
           include:
           - all
           ignore:
-          - 
+          -
         events:
         - create
         - delete
@@ -193,7 +191,7 @@ spec:
           include:
           - all
           ignore:
-          - 
+          -
         events:
         - create
         - delete
@@ -203,7 +201,7 @@ spec:
           include:
           - all
           ignore:
-          - 
+          -
         events:
         - create
         - delete
@@ -213,7 +211,7 @@ spec:
           include:
           - all
           ignore:
-          - 
+          -
         events:
         - create
         - delete
