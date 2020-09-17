@@ -15,6 +15,6 @@ spec:
     - nolock
   nfs:
     path: /
-    server: nfs-server
+    server: nfs-server-internal
     readOnly: false
 
