@@ -6,13 +6,6 @@ git:
   url: "git@github.com:nctiggy/home-gitops"
 additionalArgs:
 - --connect=ws://fluxcloud
-prometheus:
-  enabled: true
-  serviceMonitor:
-    create: true
-    interval: 30s
-    scrapeTimeout: 10s
-    namespace: flux
 syncGarbageCollection:
   enabled: true
 dashboards:
