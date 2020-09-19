@@ -34,3 +34,13 @@ spec:
         claimName: "nfs-pvc"
       config:
         claimName: "plex-config"
+    affinity:
+      podAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+            - key: app
+              operator: In
+              values:
+              - nfs-server
+          topologyKey: "kubernetes.io/hostname"
