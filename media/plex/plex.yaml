@@ -26,8 +26,7 @@ spec:
       type: LoadBalancer
       loadBalancerIP: "192.168.0.52"
     serviceUDP:
-      type: LoadBalancer
-      loadBalancerIP: "192.168.0.53"
+      type: ClusterIP
     persistence:
       data:
         existingClaim: "nfs-pvc"
