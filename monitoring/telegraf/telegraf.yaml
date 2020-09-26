@@ -1,0 +1,39 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: telegraf
+  namespace: monitoring
+  annotations:
+    fluxcd.io/automated: "false"
+    fluxcd.io/tag.chart-image: 'regexp:^(1\.[0-9]+\.[0-9]+)$'
+spec:
+  releaseName: telegraf
+  rollback:
+    enable: true
+  chart:
+    repository: https://helm.influxdata.com/
+    name: telegraf
+    version: 1.7.23
+  values:
+    config:
+      inputs:
+        snmp:
+          agents: ["192.168.0.98"]
+          timeout: "5s"
+          version: 2
+          community: "public"
+          field:
+          - name: "hostname"
+            oid: "SNMPv2-MIB::sysName.0"
+            is_tag: true
+          - name: "uptime"
+            oid: "DISMAN-EVENT-MIB::sysUpTimeInstance"
+          table:
+            name: "interface"
+            inherit_tags: ["hostname"]
+            oid: "IF-MIB::ifTable"
+            field:
+            - name: "ifDescr"
+              oid: "IF-MIB::ifDescr"
+              is_tag: true
