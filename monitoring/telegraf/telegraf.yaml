@@ -29,8 +29,8 @@ spec:
           version: 2
           community: "public"
           field:
-          - name: "hostname"
-            oid: "SNMPv2-MIB::sysName.0"
-            is_tag: true
-          - name: "uptime"
-            oid: "DISMAN-EVENT-MIB::sysUpTimeInstance"
+            - name: "hostname"
+              oid: "SNMPv2-MIB::sysName.0"
+              is_tag: true
+            - name: "uptime"
+              oid: "DISMAN-EVENT-MIB::sysUpTimeInstance"
