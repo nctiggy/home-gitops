@@ -28,17 +28,17 @@ spec:
           timeout: "5s"
           version: 2
           community: "public"
+        field:
+        - name: "hostname"
+          oid: "SNMPv2-MIB::sysName.0"
+          is_tag: true
+        - name: "uptime"
+          oid: "DISMAN-EVENT-MIB::sysUpTimeInstance"
+        table:
+          name: "interface"
+          inherit_tags: ["hostname"]
+          oid: "IF-MIB::ifTable"
           field:
-          - name: "hostname"
-            oid: "SNMPv2-MIB::sysName.0"
+          - name: "ifDescr"
+            oid: "IF-MIB::ifDescr"
             is_tag: true
-          - name: "uptime"
-            oid: "DISMAN-EVENT-MIB::sysUpTimeInstance"
-          table:
-            name: "interface"
-            inherit_tags: ["hostname"]
-            oid: "IF-MIB::ifTable"
-            field:
-            - name: "ifDescr"
-              oid: "IF-MIB::ifDescr"
-              is_tag: true
