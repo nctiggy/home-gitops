@@ -28,8 +28,7 @@ spec:
           timeout: "5s"
           version: 2
           community: "public"
-      - snmp:
-          field:
-            name: "hostname"
-            oid: "SNMPv2-MIB::sysName.0"
-            is_tag: true
+      - snmp.field:
+          name: "hostname"
+          oid: "SNMPv2-MIB::sysName.0"
+          is_tag: true
