@@ -12,7 +12,8 @@ spec:
   rollback:
     enable: true
   chart:
-    name: grafana/grafana
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    name: grafana
     version: 5.6.10
   values:
     datasources:
