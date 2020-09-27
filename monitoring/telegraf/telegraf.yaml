@@ -34,3 +34,7 @@ spec:
               is_tag: true
             - name: "uptime"
               oid: "DISMAN-EVENT-MIB::sysUpTimeInstance"
+          table:
+            - name = "interface"
+              inherit_tags = [ "hostname" ]
+              oid = "IF-MIB::ifTable"
