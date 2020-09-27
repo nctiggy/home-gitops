@@ -24,10 +24,10 @@ spec:
           database: "telegraf"
       inputs:
       - snmp:
-          agents: ["192.168.0.98"]
-          timeout: "5s"
-          version: 2
-          community: "public"
+        agents: ["192.168.0.98"]
+        timeout: "5s"
+        version: 2
+        community: "public"
         - field:
           - name: "hostname"
             oid: "SNMPv2-MIB::sysName.0"
