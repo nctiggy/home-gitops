@@ -12,7 +12,7 @@ spec:
   rollback:
     enable: true
   chart:
-    repository: https://kubernetes-charts.storage.googleapis.com/
+    repository: https://grafana.github.io/helm-charts
     name: grafana
     version: 5.6.10
   values:
