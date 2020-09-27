@@ -18,7 +18,7 @@ spec:
   values:
     config:
       inputs:
-        snmp:
+      - snmp:
           agents: ["192.168.0.98"]
           timeout: "5s"
           version: 2
