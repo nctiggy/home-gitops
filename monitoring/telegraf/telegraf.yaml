@@ -17,6 +17,11 @@ spec:
     version: 1.7.23
   values:
     config:
+      outputs:
+      - influxdb:
+          urls:
+          - "http://influxdb.monitoring.svc:8086"
+          database: "telegraf"
       inputs:
       - snmp:
           agents: ["192.168.0.98"]
