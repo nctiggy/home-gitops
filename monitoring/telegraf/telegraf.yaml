@@ -28,6 +28,7 @@ spec:
           timeout: "5s"
           version: 2
           community: "public"
+          interval: "60s"
       - snmp.field:
           name: "hostname"
           oid: "SNMPv2-MIB::sysName.0"
