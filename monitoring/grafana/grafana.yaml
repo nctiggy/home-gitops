@@ -16,6 +16,9 @@ spec:
     name: grafana
     version: 5.6.10
   values:
+    adminUser:
+    admin:
+      existingSecret: "grafana-secret"
     datasources:
       datasources.yaml:
         apiVersion: 1

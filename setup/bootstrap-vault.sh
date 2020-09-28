@@ -208,6 +208,8 @@ if [ $FIRST_RUN == 0 ]; then
 fi
 message "writing secrets to vault"
 vault kv put secrets/flux/fluxcloud slack_url="$SLACK_WEBHOOK_URL"
+vault kv put secrets/monitoring/grafana/grafana-secret admin-user="$GRAFANA_USERNAME"
+vault kv patch secrets/monitoring/grafana/grafana-secret admin-password="$GRAFANA_PASSWORD"
 kvault "kube-system/traefik/traefik-secret.txt"
 kvault "monitoring/botkube/botkube-secret.txt"
 #loadSecretsToVault
