@@ -35,9 +35,9 @@ spec:
         tls:
         - secretName: nzbget
           hosts:
-          - nzbget.web.bluehairfreak.com
+          - downloads.web.bluehairfreak.com
         rules:
-        - host: nzbget.web.bluehairfreak.com
+        - host: downloads.web.bluehairfreak.com
           http:
             paths:
             - path: /
