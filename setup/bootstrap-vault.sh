@@ -212,6 +212,7 @@ vault kv put secrets/monitoring/grafana/grafana-secret admin-user="$GRAFANA_USER
 vault kv patch secrets/monitoring/grafana/grafana-secret admin-password="$GRAFANA_PASSWORD"
 kvault "kube-system/traefik/traefik-secret.txt"
 kvault "monitoring/botkube/botkube-secret.txt"
+kvault "iot/home-assistant/home-assistant-values.txt"
 #loadSecretsToVault
 
 kill $VAULT_FWD_PID
