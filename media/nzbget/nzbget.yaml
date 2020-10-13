@@ -39,7 +39,6 @@ spec:
           - downloads.web.bluehairfreak.com
         hosts:
         - host: downloads.web.bluehairfreak.com
-          http:
-            paths:
-            - path: /
-              pathType: Prefix
+          paths:
+          - path: /
+            pathType: Prefix
