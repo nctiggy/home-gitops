@@ -6,7 +6,7 @@ metadata:
   namespace: media
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: regex:^3\.\d\.\d\.\d+-ls.*$
+    filter.fluxcd.io/chart-image: glob:3.*
 spec:
   releaseName: radarr
   helmVersion: v3
