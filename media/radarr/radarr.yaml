@@ -6,7 +6,7 @@ metadata:
   namespace: media
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: regex:^(3+\.[0-9]+\.[0-9]+\.[0-9]+-ls.*)$
+    filter.fluxcd.io/chart-image: regex:^3\.\d\.\d\.\d+-ls.*$
 spec:
   releaseName: radarr
   helmVersion: v3
@@ -20,7 +20,7 @@ spec:
     radarr:
       image:
         repository: linuxserver/radarr
-        tag: "arm32v7-3.0.0.3790-ls27"
+        tag: "3.0.0.3916-ls26"
       env:
         TZ: "America/Los_Angeles"
       persistence:
