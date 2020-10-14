@@ -23,6 +23,7 @@ spec:
     persistence:
       config:
         enabled: true
+        existingClaim: "heimdall-config"
         skipuninstall: true
   valueFileSecrets:
   - name: "heimdall-helm-values"
