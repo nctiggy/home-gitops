@@ -53,4 +53,4 @@ spec:
               - nfs-server
           topologyKey: "kubernetes.io/hostname"
   valueFileSecrets:
-  - "plex-helm-values"
+  - name: "plex-helm-values"

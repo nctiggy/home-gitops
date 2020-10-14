@@ -31,4 +31,4 @@ spec:
           enabled: true
           existingClaim: nfs-pvc
   valueFileSecrets:
-  - "sonarr-helm-values"
+  - name: "sonarr-helm-values"

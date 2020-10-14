@@ -30,4 +30,4 @@ spec:
           enabled: true
           existingClaim: nfs-pvc
   valueFileSecrets:
-  - "radarr-helm-values"
+  - name: "radarr-helm-values"

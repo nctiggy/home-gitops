@@ -25,4 +25,4 @@ spec:
         enabled: true
         skipuninstall: true
   valueFileSecrets:
-  - "heimdall-helm-values"
+  - name: "heimdall-helm-values"
