@@ -6,5 +6,5 @@ metadata:
 spec:
   keys:
     - values.yaml
-  path: secrets/default/sonarr/sonarr-helm-values
+  path: secrets/media/sonarr/sonarr-helm-values
   type: Opaque

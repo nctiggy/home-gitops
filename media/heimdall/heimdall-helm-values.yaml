@@ -6,5 +6,5 @@ metadata:
 spec:
   keys:
     - values.yaml
-  path: secrets/default/heimdall/heimdall-helm-values
+  path: secrets/media/heimdall/heimdall-helm-values
   type: Opaque

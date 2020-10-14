@@ -6,5 +6,5 @@ metadata:
 spec:
   keys:
     - values.yaml
-  path: secrets/default/radarr/radarr-helm-values
+  path: secrets/media/radarr/radarr-helm-values
   type: Opaque
