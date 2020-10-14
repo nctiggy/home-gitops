@@ -1,16 +1,17 @@
-ingress:
-  enabled: true
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    ingress.kubernetes.io/force-ssl-redirect: "true"
-    kubernetes.io/ingress.class: contour
-    kubernetes.io/tls-acme: "true"
-  tls:
-  - secretName: nzbget
+nzbget:
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      ingress.kubernetes.io/force-ssl-redirect: "true"
+      kubernetes.io/ingress.class: contour
+      kubernetes.io/tls-acme: "true"
+    tls:
+    - secretName: nzbget
+      hosts:
+      - downloads.$DOMAIN
     hosts:
-    - downloads.$DOMAIN
-  hosts:
-  - host: downloads.$DOMAIN
-    paths:
-    - path: /
-      pathType: Prefix
+    - host: downloads.$DOMAIN
+      paths:
+      - path: /
+        pathType: Prefix
