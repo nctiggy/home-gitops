@@ -1,0 +1,16 @@
+expose:
+  tls:
+    certSource: secret
+    secret:
+      secretName: harbor
+      notarySecretName: harbor-notary
+  ingress:
+    hosts:
+      core: "harbor.$DOMAIN"
+      notary: "harbor-notary.$DOMAIN"
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      ingress.kubernetes.io/force-ssl-redirect: "true"
+      kubernetes.io/ingress.class: contour
+      kubernetes.io/tls-acme: "true"
+externalURL: "https://harbor.$DOMAIN"
