@@ -6,30 +6,39 @@ metadata:
   namespace: media
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: semver:~1
+    filter.fluxcd.io/chart-image: regex:^(1\.[0-9]+\.[0-9]+\.[0-9]+-.*)$
 spec:
   releaseName: plex
   helmVersion: v3
   rollback:
     enable: false
   chart:
-    repository: https://billimek.com/billimek-charts/
+    repository: https://k8s-at-home.com/charts/
     name: plex
-    version: 1.7.2
+    version: 2.0.4
   values:
     image:
       tag: "1.20.1.3252-a78fef9a9"
     timezone: "Americas/Los_Angeles"
-    claimToken: "claim-kLVrY1Tum1omV4KJ1hAv"
-    advertiseIp: "http://192.168.0.52:32400"
+    plexUid: 1001
+    plexGid: 1001
     serviceTCP:
       type: LoadBalancer
-      loadBalancerIP: "192.168.0.52"
+      loadBalancerIP: 192.168.0.52
+      externalTrafficPolicy: Local
+      annotations:
+        metallb.universe.tf/allow-shared-ip: plex
     serviceUDP:
-      type: ClusterIP
+      type: LoadBalancer
+      loadBalancerIP: 192.168.0.52
+      externalTrafficPolicy: Local
+      annotations:
+        metallb.universe.tf/allow-shared-ip: plex
     persistence:
+      transcode:
+        enabled: true
       data:
-        existingClaim: "nfs-pvc"
+        enabled: true
         claimName: "nfs-pvc"
       config:
         claimName: "plex-config"
@@ -43,3 +52,5 @@ spec:
               values:
               - nfs-server
           topologyKey: "kubernetes.io/hostname"
+  valueFileSecrets:
+  - "plex-helm-values"

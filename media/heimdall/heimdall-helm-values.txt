@@ -1,0 +1,16 @@
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    ingress.kubernetes.io/force-ssl-redirect: "true"
+    kubernetes.io/ingress.class: contour
+    kubernetes.io/tls-acme: "true"
+  tls:
+  - secretName: heimdall
+    hosts:
+    - homepage.$DOMAIN
+  hosts:
+  - host: homepage.$DOMAIN
+    paths:
+    - path: /
+      pathType: Prefix

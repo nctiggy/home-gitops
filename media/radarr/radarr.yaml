@@ -6,7 +6,7 @@ metadata:
   namespace: media
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: semver:3.0
+    filter.fluxcd.io/chart-image: regex:^([0-9]+\.[0-9]+-ls.*)$
 spec:
   releaseName: radarr
   helmVersion: v3
@@ -20,7 +20,7 @@ spec:
     radarr:
       image:
         repository: linuxserver/radarr
-        tag: "3.0.0.3775-ls23"
+        tag: "3.0.0.3790-ls27"
       timezone: "America/Los_Angeles"
       persistence:
         config:
@@ -29,20 +29,5 @@ spec:
         media:
           enabled: true
           existingClaim: nfs-pvc
-          skipuninstall: true
-      ingress:
-        enabled: true
-        annotations:
-          cert-manager.io/cluster-issuer: letsencrypt-prod
-          ingress.kubernetes.io/force-ssl-redirect: "true"
-          kubernetes.io/ingress.class: contour
-          kubernetes.io/tls-acme: "true"
-        tls:
-        - secretName: radarr
-          hosts:
-          - movies.web.bluehairfreak.com
-        hosts:
-        - host: movies.web.bluehairfreak.com
-          paths:
-          - path: /
-            pathType: Prefix
+  valueFileSecrets:
+  - "radarr-helm-values"

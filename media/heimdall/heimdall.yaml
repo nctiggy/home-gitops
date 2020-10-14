@@ -6,7 +6,7 @@ metadata:
   namespace: media
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: semver:2.2
+    filter.fluxcd.io/chart-image: regex:^([0-9]+\.[0-9]+-ls.*)$
 spec:
   releaseName: heimdall
   helmVersion: v3
@@ -15,15 +15,14 @@ spec:
   chart:
     repository: https://billimek.com/billimek-charts/
     name: heimdall
-    version: 1.0.3
+    version: 2.0.1
   values:
     image:
       repository: linuxserver/heimdall
       tag: "2.2.2-ls84"
-    podAnnotations:
-      backup.velero.io/backup-volumes: config
     persistence:
       config:
         enabled: true
-        existingClaim: heimdall-config
         skipuninstall: true
+  valueFileSecrets:
+  - "heimdall-helm-values"

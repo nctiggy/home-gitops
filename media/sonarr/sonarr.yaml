@@ -6,27 +6,29 @@ metadata:
   namespace: media
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: semver:~3.0
+    filter.fluxcd.io/chart-image: regex:^([0-9]+\.[0-9]+-ls.*)$
 spec:
   releaseName: sonarr
   helmVersion: v3
   rollback:
     enable: true
   chart:
-    repository: https://billimek.com/billimek-charts/
+    repository: https://k8s-at-home.com/charts/
     name: sonarr
-    version: 4.1.3
+    version: 6.0.2
   values:
-    image:
-      repository: linuxserver/sonarr
-      tag: "3.0.3.928-ls44"
-    timezone: "America/Los_Angeles"
-    podAnnotations:
-      backup.velero.io/backup-volumes: config
-    persistence:
-      config:
-        existingClaim: sonarr-config
-        skipuninstall: true
-      media:
-        existingClaim: nfs-pvc
-        skipuninstall: true
+    sonarr:
+      image:
+        repository: linuxserver/sonarr
+        tag: "3.0.3.928-ls44"
+      timezone: "America/Los_Angeles"
+      persistence:
+        config:
+          enabled: true
+          skipuninstall: true
+          size: 8Gi
+        media:
+          enabled: true
+          existingClaim: nfs-pvc
+  valueFileSecrets:
+  - "sonarr-helm-values"
