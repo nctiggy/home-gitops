@@ -24,6 +24,7 @@ spec:
       persistence:
         config:
           enabled: true
+          existingClaim: nzbget
           skipuninstall: true
         downloads:
           enabled: true

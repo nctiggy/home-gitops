@@ -26,6 +26,7 @@ spec:
       persistence:
         config:
           enabled: true
+          existingClaim: radarr
           skipuninstall: true
         media:
           enabled: true

@@ -26,6 +26,7 @@ spec:
       persistence:
         config:
           enabled: true
+          existingClaim: sonarr
           skipuninstall: true
           size: 8Gi
         media:
