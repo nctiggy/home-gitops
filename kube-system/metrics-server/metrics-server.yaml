@@ -1,0 +1,20 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: metrics-server
+  namespace: kube-system
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/server: semver:~0
+spec:
+  releaseName: metrics-server
+  rollback:
+    enabled: false
+  chart:
+    version: 2.11.2
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    name: metrics-server
+  values:
+    args:
+      - --kubelet-preferred-address-types=InternalIP
