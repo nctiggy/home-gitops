@@ -20,7 +20,7 @@ spec:
     radarr:
       image:
         repository: linuxserver/radarr
-        tag: "3.0.0.3916-ls26"
+        tag: "arm32v7-3.0.0.3790-ls27"
       env:
         TZ: "America/Los_Angeles"
       persistence:
