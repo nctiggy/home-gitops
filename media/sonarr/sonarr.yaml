@@ -19,7 +19,7 @@ spec:
   values:
     sonarr:
       image:
-        tag: "3.0.4.981-ls62"
+        tag: "3.0.4.980-ls61"
       env:
         TZ: "America/Los_Angeles"
       persistence:
