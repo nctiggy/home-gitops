@@ -2,9 +2,9 @@ apiVersion: ricoberger.de/v1alpha1
 kind: VaultSecret
 metadata:
   name: nzbget-helm-values
-  namespace: default
+  namespace: media
 spec:
   keys:
     - values.yaml
-  path: secrets/default/nzbget/nzbget-helm-values
+  path: secrets/media/nzbget/nzbget-helm-values
   type: Opaque
