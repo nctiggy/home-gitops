@@ -164,8 +164,8 @@ EOF
 loadSecretsToVault() {
   message "writing secrets to vault"
   vault kv put secrets/flux/fluxcloud slack_url="$SLACK_WEBHOOK_URL"
-  vault kv put secrets/kube-system/nginx-basic-auth-jeff auth="$JEFF_AUTH"
-  vault kv put secrets/cert-manager/cloudflare-api-key api-key="$CF_API_KEY"
+  vault kv put secrets/monitoring/grafana/grafana-secret admin-user="$GRAFANA_USERNAME"
+  vault kv patch secrets/monitoring/grafana/grafana-secret admin-password="$GRAFANA_PASSWORD"
 
   ####################
   # helm chart values
@@ -173,14 +173,14 @@ loadSecretsToVault() {
   kvault "kube-system/kured/kured-helm-values.txt"
   kvault "kube-system/oauth2-proxy/oauth2-proxy-helm-values.txt"
   kvault "logs/loki/loki-helm-values.txt"
-  kvault "monitoring/botkube/botkube-helm-values.txt"
+  kvault "monitoring/botkube/botkube-secret.txt"
   kvault "monitoring/prometheus-operator/prometheus-operator-helm-values.txt"
   kvault "monitoring/thanos/thanos-helm-values.txt"
   kvault "monitoring/uptimerobot-prometheus/uptimerobot-prometheus-helm-values.txt"
   kvault "default/blocky/blocky-helm-values.txt"
   kvault "default/frigate/frigate-helm-values.txt"
   kvault "default/goldilocks/goldilocks-helm-values.txt"
-  kvault "default/home-assistant/home-assistant-helm-values.txt"
+  kvault "iot/home-assistant/home-assistant-values.txt"
   kvault "default/home-assistant/postgresql-helm-values.txt"
   kvault "default/hubot/hubot-helm-values.txt"
   kvault "default/minio/minio-helm-values.txt"
@@ -206,13 +206,6 @@ loginVault
 if [ $FIRST_RUN == 0 ]; then
   setupVaultSecretsOperator
 fi
-message "writing secrets to vault"
-vault kv put secrets/flux/fluxcloud slack_url="$SLACK_WEBHOOK_URL"
-vault kv put secrets/monitoring/grafana/grafana-secret admin-user="$GRAFANA_USERNAME"
-vault kv patch secrets/monitoring/grafana/grafana-secret admin-password="$GRAFANA_PASSWORD"
-kvault "kube-system/traefik/traefik-secret.txt"
-kvault "monitoring/botkube/botkube-secret.txt"
-kvault "iot/home-assistant/home-assistant-values.txt"
-#loadSecretsToVault
+loadSecretsToVault
 
 kill $VAULT_FWD_PID
