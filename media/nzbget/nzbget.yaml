@@ -29,6 +29,7 @@ spec:
           enabled: true
       additionalVolumes:
       - name: downloads
-        claimName: nfs-pvc
+        persistentVolumeClaim:
+          claimName: nfs-pvc
   valueFileSecrets:
   - name: "nzbget-helm-values"
