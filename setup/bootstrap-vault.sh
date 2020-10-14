@@ -190,6 +190,7 @@ loadSecretsToVault() {
   kvault "media/radarr/radarr-helm-values.txt"
   kvault "default/rtorrent-flood/rtorrent-flood-helm-values.txt"
   kvault "media/sonarr/sonarr-helm-values.txt"
+  kvault "media/heimdall/heimdall-helm-values.txt"
   kvault "default/teslamate/teslamate-helm-values.txt"
   kvault "default/unifi/unifi-helm-values.txt"
   kvault "default/zwave2mqtt/zwave2mqtt-helm-values.txt"

@@ -20,8 +20,9 @@ spec:
     radarr:
       image:
         repository: linuxserver/radarr
-        tag: "arm32v7-3.0.0.3790-ls27"
-      timezone: "America/Los_Angeles"
+        tag: "3.0.0.3916-ls26"
+      env:
+        TZ: "America/Los_Angeles"
       persistence:
         config:
           enabled: true
