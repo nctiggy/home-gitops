@@ -26,9 +26,9 @@ spec:
           enabled: true
           skipuninstall: true
         downloads:
-          enabled: false
-        extraMounts:
-        - name: media
+          enabled: true
+        additionalVolumes:
+        - name: downloads
           claimName: nfs-pvc
   valueFileSecrets:
   - name: "nzbget-helm-values"
