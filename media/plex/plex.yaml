@@ -41,7 +41,8 @@ spec:
         enabled: true
         claimName: "nfs-pvc"
       config:
-        claimName: "plex-config"
+        enabled: true
+        #claimName: "plex-config"
     affinity:
       podAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
