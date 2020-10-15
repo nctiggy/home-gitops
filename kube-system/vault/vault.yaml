@@ -60,3 +60,5 @@ spec:
     ui:
       enabled: true
       serviceType: "ClusterIP"
+  valueFileSecrets:
+  - name: "vault-helm-values"
