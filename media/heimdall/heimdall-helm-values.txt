@@ -9,5 +9,7 @@ ingress:
   - secretName: heimdall
     hosts:
     - homepage.$DOMAIN
+    - homepage.$DOMAIN1
   hosts:
   - homepage.$DOMAIN
+  - homepage.$DOMAIN1
