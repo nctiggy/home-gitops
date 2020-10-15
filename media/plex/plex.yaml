@@ -6,7 +6,7 @@ metadata:
   namespace: media
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: regex:^(1\.[0-9]+\.[0-9]+\.[0-9]+-.*)$
+    filter.fluxcd.io/chart-image: regex:^(1\.\d+\.\d+\.\d+-.*)$
 spec:
   releaseName: plex
   helmVersion: v3
