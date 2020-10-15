@@ -28,11 +28,11 @@ spec:
           skipuninstall: true
         downloads:
           enabled: true
-          accessMode: ReadWriteMany
+          existingClaim: nfs-pvc
       additionalVolumes:
       - name: downloads
         persistentVolumeClaim:
-        claimName: nfs-pvc
+          claimName: nfs-pvc
       additionalVolumeMounts:
       - name: downloads
         mountPath: /downloads
