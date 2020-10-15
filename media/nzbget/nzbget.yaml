@@ -28,6 +28,7 @@ spec:
           skipuninstall: true
         downloads:
           enabled: true
+          accessMode: ReadWriteMany
       additionalVolumes:
       - name: downloads
         persistentVolumeClaim:
