@@ -32,5 +32,8 @@ spec:
       - name: downloads
         persistentVolumeClaim:
         claimName: nfs-pvc
+      additionalVolumeMounts:
+      - name: downloads
+        mountPath: /downloads
   valueFileSecrets:
   - name: "nzbget-helm-values"
