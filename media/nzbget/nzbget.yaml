@@ -28,6 +28,9 @@ spec:
           skipuninstall: true
         downloads:
           enabled: true
-          existingClaim: nfs-pvc
+      additionalVolumes:
+      - name: downloads
+        persistentVolumeClaim:
+        claimName: nfs-pvc
   valueFileSecrets:
   - name: "nzbget-helm-values"
