@@ -6,7 +6,7 @@ metadata:
   namespace: media
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: semver:~3
+    filter.fluxcd.io/chart-image: semver:^3
 spec:
   releaseName: sonarr
   helmVersion: v3
