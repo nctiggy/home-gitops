@@ -13,5 +13,4 @@ server:
     hosts:
       - host: vault.$DOMAIN
         paths:
-        - path: /
-          pathType: Prefix
+        - /
