@@ -20,14 +20,11 @@ spec:
     image:
       tag: "1.20.1.3252-a78fef9a9"
     timezone: "Americas/Los_Angeles"
-    plexUid: 1001
-    plexGid: 1001
     serviceTCP:
       type: LoadBalancer
       loadBalancerIP: 192.168.0.52
     serviceUDP:
       type: LoadBalancer
-      loadBalancerIP: 192.168.0.58
     persistence:
       transcode:
         enabled: true
