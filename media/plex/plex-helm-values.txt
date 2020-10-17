@@ -1,2 +1,2 @@
 claimToken: "$PLEX_CLAIM_TOKEN"
-advertiseIp: "192.168.0.52:32400"
+advertiseIp: "http://192.168.0.52:32400"
