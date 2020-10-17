@@ -18,13 +18,17 @@ spec:
     version: 2.0.4
   values:
     image:
-      tag: "1.20.1.3252-a78fef9a9"
+      tag: "1.20.3.3437-f1f08d65b"
     timezone: "Americas/Los_Angeles"
-    serviceTCP:
-      type: LoadBalancer
-      loadBalancerIP: 192.168.0.52
-    serviceUDP:
-      type: LoadBalancer
+    allowedNetworks:
+    - 127.0.0.1
+    - 192.168.0.0/24
+      #serviceTCP:
+      #  type: LoadBalancer
+      #  loadBalancerIP: 192.168.0.52
+      #  externalTrafficPolicy: Local
+      #serviceUDP:
+      #  type: LoadBalancer
     persistence:
       transcode:
         enabled: true
@@ -34,6 +38,9 @@ spec:
       config:
         enabled: true
         claimName: "plex-config"
+    certificate:
+      pkcsMangler:
+        enabled: true
     affinity:
       podAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
