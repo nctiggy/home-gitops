@@ -1,13 +1,2 @@
 claimToken: "$PLEX_CLAIM_TOKEN"
 advertiseIp: "192.168.0.52:32400"
-ingress:
-  enabled: true
-  annotations:
-    kubernetes.io/ingress.class: contour
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    kubernetes.io/tls-acme: "true"
-  hosts: [plex.$DOMAIN_ROOT]
-  tls:
-  - secretName: plex
-    hosts:
-    - plex.$DOMAIN_ROOT
