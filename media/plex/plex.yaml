@@ -39,16 +39,6 @@ spec:
       config:
         enabled: true
         claimName: "plex-config"
-    certificate:
-      pkcsMangler:
-        enabled: true
-        certificateSecret:
-          name: "plex"
-          keyName: "tls.key"
-          crtName: "tls.crt"
-          volume:
-            name: plex-certs
-            mountPath: /etc/plex-certs
     affinity:
       podAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
