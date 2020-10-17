@@ -1,5 +1,5 @@
 claimToken: "$PLEX_CLAIM_TOKEN"
-advertiseIp: "plex.$DOMAIN_ROOT"
+advertiseIp: "192.168.0.52:32400"
 ingress:
   enabled: true
   annotations:
