@@ -41,6 +41,13 @@ spec:
     certificate:
       pkcsMangler:
         enabled: true
+        certificateSecret:
+          name: ""
+          keyName: "tls.key"
+          crtName: "tls.crt"
+          volume:
+            name: plex
+            mountPath: /etc/plex-certs
     affinity:
       podAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
