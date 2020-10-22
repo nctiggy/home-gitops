@@ -32,7 +32,7 @@ spec:
       additionalVolumes:
       - name: downloads
         persistentVolumeClaim:
-          claimName: nfs-pvc
+          claimName: nfs-share
       additionalVolumeMounts:
       - name: downloads
         mountPath: /downloads
