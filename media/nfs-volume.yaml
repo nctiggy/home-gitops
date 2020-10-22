@@ -10,9 +10,7 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   mountOptions:
-    - hard
     - nfsvers=4
-    - nolock
   nfs:
     path: /
     server: 192.168.0.59
