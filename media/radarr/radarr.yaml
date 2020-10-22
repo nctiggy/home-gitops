@@ -29,6 +29,6 @@ spec:
           skipuninstall: true
         media:
           enabled: true
-          existingClaim: nfs-pvc
+          existingClaim: nfs-share
   valueFileSecrets:
   - name: "radarr-helm-values"

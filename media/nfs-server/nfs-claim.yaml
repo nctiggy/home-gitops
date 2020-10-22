@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: nfs-pvc
+  name: nfs-share
   namespace: media
 spec:
   accessModes:
@@ -9,6 +9,6 @@ spec:
   resources:
      requests:
        storage: 16Ti
-  storageClassName: nfs-dynamic
+  storageClassName: nfs-storage
   volumeMode: Filesystem
-  volumeName: nfs-pv
+  volumeName: nfs-share

@@ -35,7 +35,7 @@ spec:
         enabled: true
       data:
         enabled: true
-        claimName: "nfs-pvc"
+        claimName: "nfs-share"
       config:
         enabled: true
         claimName: "plex-config"

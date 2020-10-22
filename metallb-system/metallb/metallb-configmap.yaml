@@ -6,7 +6,11 @@ metadata:
 data:
   config: |
     address-pools:
-    - name: default
+    - name: frontend
       protocol: layer2
       addresses:
       - 192.168.0.50-192.168.0.59
+    - name: backend
+      protocol: layer2
+      addresses:
+      - 10.10.10.50-10.10.10.59

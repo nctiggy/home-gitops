@@ -27,9 +27,8 @@ spec:
           enabled: true
           existingClaim: sonarr
           skipuninstall: true
-          size: 8Gi
         media:
           enabled: true
-          existingClaim: nfs-pvc
+          existingClaim: nfs-share
   valueFileSecrets:
   - name: "sonarr-helm-values"
