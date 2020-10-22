@@ -16,19 +16,19 @@ spec:
   values:
     updateStrategy:
       type: Recreate
-    persistence:
-      persistentVolumeClaim:
-        registry:
-          existingClaim: harbor-harbor-registry
-        chartmuseum:
-          existingClaim: harbor-harbor-chartmuseum
-        jobservice:
-          existingClaim: harbor-harbor-jobservice
-        database:
-          existingClaim: database-data-harbor-harbor-database-0
-        redis:
-          existingClaim: data-harbor-harbor-redis-0
-        trivy:
-          existingClaim: data-harbor-harbor-trivy-0
+      #persistence:
+      #  persistentVolumeClaim:
+      #    registry:
+      #      existingClaim: harbor-harbor-registry
+      #    chartmuseum:
+      #      existingClaim: harbor-harbor-chartmuseum
+      #    jobservice:
+      #      existingClaim: harbor-harbor-jobservice
+      #    database:
+      #      existingClaim: database-data-harbor-harbor-database-0
+      #    redis:
+      #      existingClaim: data-harbor-harbor-redis-0
+      #    trivy:
+      #      existingClaim: data-harbor-harbor-trivy-0
   valueFileSecrets:
   - name: "harbor-helm-values"
