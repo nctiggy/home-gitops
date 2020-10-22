@@ -28,7 +28,7 @@ spec:
           skipuninstall: true
         downloads:
           enabled: true
-          existingClaim: nfs-pvc
+          existingClaim: nfs-share
       additionalVolumes:
       - name: downloads
         persistentVolumeClaim:
