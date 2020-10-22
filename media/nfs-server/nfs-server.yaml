@@ -77,7 +77,7 @@ spec:
   resources:
     requests:
       storage: 16Ti
-  storageClassName: lab-powerflex-class-vxflexos-xfs
+  storageClassName: vxflexos
   volumeMode: Filesystem
   volumeName: nfs-data
 ---
