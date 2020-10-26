@@ -1,11 +1,10 @@
 apiVersion: ricoberger.de/v1alpha1
 kind: VaultSecret
 metadata:
-  name: grafana-secret
+  name: prometheus-helm-values
   namespace: monitoring
 spec:
   keys:
-    - admin-user
-    - admin-password
-  path: secrets/monitoring/grafana/grafana-secret
+    - values.yaml
+  path: secrets/monitoring/prometheus/prometheus-helm-values
   type: Opaque
