@@ -10,10 +10,8 @@ alertmanager:
       hosts:
       - alertmanager.$DOMAIN
     hosts:
-    - host: alertmanager.$DOMAIN
-      paths:
-      - path: /
-        pathType: Prefix
+    - alertmanager.$DOMAIN
+    path: /
 grafana:
   ingress:
     enabled: true
@@ -27,7 +25,5 @@ grafana:
       hosts:
       - grafana.$DOMAIN
     hosts:
-    - host: grafana.$DOMAIN
-      paths:
-      - path: /
-        pathType: Prefix
+    - grafana.$DOMAIN
+    path: /
