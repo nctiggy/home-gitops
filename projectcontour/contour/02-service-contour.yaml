@@ -10,6 +10,10 @@ spec:
     name: xds
     protocol: TCP
     targetPort: 8001
+  - port: 8000
+    name: debug
+    protocol: TCP
+    targetPort: 8000
   selector:
     app: contour
   type: ClusterIP

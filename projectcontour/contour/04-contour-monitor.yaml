@@ -1,0 +1,11 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  namespace: projectcontour
+spec:
+  endpoints:
+  - port: debug
+  jobLabel: jobLabel
+  selector:
+    matchLabels:
+      app: contour
