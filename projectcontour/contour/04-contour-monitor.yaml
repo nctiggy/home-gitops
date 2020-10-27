@@ -11,7 +11,9 @@ spec:
     - projectcontour
   jobLabel: jobLabel
   endpoints:
-  - port: debug
+  - path: /metrics
+    port: debug
   selector:
     matchLabels:
+      app: contour
       service: contour
