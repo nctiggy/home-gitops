@@ -14,4 +14,4 @@ spec:
   - port: debug
   selector:
     matchLabels:
-      app: contour
+      service: contour
