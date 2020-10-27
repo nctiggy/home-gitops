@@ -9,11 +9,9 @@ spec:
   namespaceSelector:
     matchNames:
     - projectcontour
-  jobLabel: jobLabel
   endpoints:
   - path: /metrics
     port: debug
   selector:
     matchLabels:
-      app: contour
-      service: contour
+      release: kube-prometheus-stack
