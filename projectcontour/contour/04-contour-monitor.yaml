@@ -4,7 +4,7 @@ metadata:
   namespace: monitoring
   name: kube-prometheus-stack-contour
   labels:
-    app: contour
+    release: kube-prometheus-stack
 spec:
   namespaceSelector:
     matchNames:
