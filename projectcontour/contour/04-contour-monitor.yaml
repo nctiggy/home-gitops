@@ -3,6 +3,8 @@ kind: ServiceMonitor
 metadata:
   namespace: monitoring
   name: kube-prometheus-stack-contour
+  labels:
+    app: contour
 spec:
   namespaceSelector:
     matchNames:
