@@ -12,6 +12,7 @@ spec:
   endpoints:
   - path: /metrics
     port: debug
+    scheme: http
   selector:
     matchLabels:
-      release: kube-prometheus-stack
+      app: contour
