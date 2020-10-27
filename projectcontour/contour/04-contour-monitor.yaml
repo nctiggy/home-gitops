@@ -2,7 +2,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   namespace: monitoring
-  name: prometheus-contour
+  name: kube-prometheus-stack-contour
 spec:
   namespaceSelector:
     matchNames:
