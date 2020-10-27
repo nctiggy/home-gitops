@@ -1,12 +1,14 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  namespace: projectcontour
+  namespace: monitoring
   name: prometheus-contour
 spec:
+  namespaceSelector:
+    matchNames:
+    - projectcontour
   endpoints:
   - port: debug
-  jobLabel: jobLabel
   selector:
     matchLabels:
       app: contour
