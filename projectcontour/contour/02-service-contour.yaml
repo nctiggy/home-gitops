@@ -4,6 +4,8 @@ kind: Service
 metadata:
   name: contour
   namespace: projectcontour
+  labels:
+    release: kube-prometheus-stack
 spec:
   ports:
   - port: 8001
