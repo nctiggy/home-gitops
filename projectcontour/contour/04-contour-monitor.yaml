@@ -9,6 +9,7 @@ spec:
   namespaceSelector:
     matchNames:
     - projectcontour
+  jobLabel: jobLabel
   endpoints:
   - port: debug
   selector:
