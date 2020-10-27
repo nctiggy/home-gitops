@@ -2,7 +2,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   namespace: monitoring
-  name: kube-prometheus-stack-contour
+  name: prometheus-contour
   labels:
     release: kube-prometheus-stack
 spec:
@@ -15,4 +15,4 @@ spec:
     scheme: http
   selector:
     matchLabels:
-      app: contour
+      poop: colon

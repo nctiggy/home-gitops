@@ -5,7 +5,7 @@ metadata:
   name: contour
   namespace: projectcontour
   labels:
-    app: contour
+  - poop: colon
 spec:
   ports:
   - port: 8001
