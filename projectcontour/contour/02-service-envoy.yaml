@@ -12,7 +12,7 @@ metadata:
     # for information about enabling the PROXY protocol on the ELB to recover
     # the original remote IP address.
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
-  lables:
+  labels:
     app: envoy
 spec:
   externalTrafficPolicy: Local

@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: envoy-metrics
   namespace: projectcontour
-  lables:
+  labels:
     discover: envoy-metrics
 spec:
   ports:
