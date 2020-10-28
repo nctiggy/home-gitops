@@ -15,4 +15,4 @@ spec:
     scheme: http
   selector:
     matchLabels:
-      discover: envoy-metrics
+      app: envoy

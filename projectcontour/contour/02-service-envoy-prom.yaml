@@ -5,7 +5,7 @@ metadata:
   name: envoy-metrics
   namespace: projectcontour
   labels:
-    discover: envoy-metrics
+    app: envoy
 spec:
   ports:
   - name: prometheus-metrics
@@ -13,5 +13,5 @@ spec:
     targetPort: 8002
     protocol: TCP
   selector:
-    discover: envoy-metrics
+    app: envoy
   type: ClusterIP

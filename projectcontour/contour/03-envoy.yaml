@@ -4,7 +4,6 @@ kind: DaemonSet
 metadata:
   labels:
     app: envoy
-    discover: envoy-metrics
   name: envoy
   namespace: projectcontour
 spec:
@@ -15,7 +14,6 @@ spec:
   selector:
     matchLabels:
       app: envoy
-      discover: envoy-metrics
   template:
     metadata:
       annotations:
@@ -24,7 +22,6 @@ spec:
         prometheus.io/path: "/stats/prometheus"
       labels:
         app: envoy
-        discover: envoy-metrics
     spec:
       containers:
       - command:
