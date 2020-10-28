@@ -9,7 +9,7 @@ spec:
   namespaceSelector:
     matchNames:
     - projectcontour
-  podMetricsEndpoints:
+  endpoints:
   - path: /stats/prometheus
     port: prometheus-metrics
     scheme: http
