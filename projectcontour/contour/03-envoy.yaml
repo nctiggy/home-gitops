@@ -4,6 +4,7 @@ kind: DaemonSet
 metadata:
   labels:
     app: envoy
+    discover: envoy-metrics
   name: envoy
   namespace: projectcontour
 spec:
@@ -14,6 +15,7 @@ spec:
   selector:
     matchLabels:
       app: envoy
+      discover: envoy-metrics
   template:
     metadata:
       annotations:
@@ -22,6 +24,7 @@ spec:
         prometheus.io/path: "/stats/prometheus"
       labels:
         app: envoy
+        discover: envoy-metrics
     spec:
       containers:
       - command:
@@ -73,7 +76,6 @@ spec:
           name: http
           protocol: TCP
         - containerPort: 8002
-          hostPort: 8002
           name: prometheus-metrics
           protocol: TCP
         - containerPort: 443
