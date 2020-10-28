@@ -23,10 +23,6 @@ spec:
   - port: 443
     name: https
     protocol: TCP
-  - name: prometheus-metrics
-    port: 8002
-    targetPort: 8002
-    protocol: TCP
   selector:
     app: envoy
   type: LoadBalancer
