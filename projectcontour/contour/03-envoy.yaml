@@ -72,6 +72,10 @@ spec:
           hostPort: 80
           name: http
           protocol: TCP
+        - containerPort: 8002
+          hostPort: 8002
+          name: prometheus-metrics
+          protocol: TCP
         - containerPort: 443
           hostPort: 443
           name: https
