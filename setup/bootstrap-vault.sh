@@ -165,6 +165,9 @@ loadSecretsToVault() {
   message "writing secrets to vault"
   vault kv put secrets/flux/fluxcloud slack_url="$SLACK_WEBHOOK_URL"
   vault kv put secrets/monitoring/grafana/grafana-secret admin-user="$GRAFANA_USERNAME"
+  vault kv put secrets/shared-services/bitwarden/bitwarden-admin password="$BITWARDEN_ADMIN_PASSWORD"
+  vault kv put secrets/shared-services/bitwarden/bitwarden-smtp password="$SMTP_PASSWORD"
+  vault kv patch secrets/shared-services/bitwarden/bitwarden-smtp username="$SMTP_USER"
   vault kv patch secrets/monitoring/grafana/grafana-secret admin-password="$GRAFANA_PASSWORD"
 
   ####################
@@ -179,6 +182,7 @@ loadSecretsToVault() {
   kvault "monitoring/prometheus/prometheus-helm-values.txt"
   kvault "monitoring/thanos/thanos-helm-values.txt"
   kvault "monitoring/uptimerobot-prometheus/uptimerobot-prometheus-helm-values.txt"
+  kvault "shared-services/bitwarden/bitwarden-helm-values.txt"
   kvault "default/blocky/blocky-helm-values.txt"
   kvault "default/frigate/frigate-helm-values.txt"
   kvault "default/goldilocks/goldilocks-helm-values.txt"

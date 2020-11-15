@@ -1,0 +1,33 @@
+apiVersion: ricoberger.de/v1alpha1
+kind: VaultSecret
+metadata:
+  name: bitwarden-helm-values
+  namespace: shared-services
+spec:
+  keys:
+    - values.yaml
+  path: secrets/shared-services/bitwarden/bitwarden-helm-values
+  type: Opaque
+---
+apiVersion: ricoberger.de/v1alpha1
+kind: VaultSecret
+metadata:
+  name: bitwarden-smtp
+  namespace: shared-services
+spec:
+  keys:
+    - username
+    - password
+  path: secrets/shared-services/bitwarden/bitwarden-smtp
+  type: Opaque
+---
+apiVersion: ricoberger.de/v1alpha1
+kind: VaultSecret
+metadata:
+  name: bitwarden-admin
+  namespace: shared-services
+spec:
+  keys:
+    - password
+  path: secrets/shared-services/bitwarden/bitwarden-admin
+  type: Opaque

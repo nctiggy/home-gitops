@@ -1,0 +1,17 @@
+image:
+  tag: "1.17.0-alpine"
+persistence:
+  enabled: true
+  size: 32Gi
+bitwardenrs:
+  signupsAllowed: true
+  admin:
+    existingSecret:
+      enabled: true
+      name: "bitwarden-admin"
+      tokenKey: "password"
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
