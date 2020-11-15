@@ -19,7 +19,7 @@ spec:
   values:
     nzbget:
       image:
-        tag: "v21.1-r2311-ls9"
+        tag: "v21.1-r2311-ls11"
       timezone: "America/Los_Angeles"
       persistence:
         config:
