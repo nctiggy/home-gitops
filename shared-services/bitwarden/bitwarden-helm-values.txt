@@ -21,9 +21,6 @@ ingress:
     kubernetes.io/tls-acme: "true"
   hosts:
   - host: passwords.$DOMAIN1
-    paths:
-    - path: /
-      pathType: Prefix
   tls:
   - secretName: bitwarden
     hosts:
