@@ -2,7 +2,7 @@ bitwardenrs:
   domain: "https://passwords.$DOMAIN1"
   smtp:
     enabled: true
-    host: "smtp.mail.me.com"
+    host: "smtp.gmail.com"
     from: "no-reply@craigcloud.io"
     fromName: "Craig's Password Shack"
     ssl: true
