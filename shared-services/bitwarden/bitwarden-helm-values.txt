@@ -1,5 +1,5 @@
 bitwardenrs:
-  domain: "passwords.$DOMAIN1"
+  domain: "https://passwords.$DOMAIN1"
   smtp:
     enabled: true
     host: "smtp.mail.me.com"
