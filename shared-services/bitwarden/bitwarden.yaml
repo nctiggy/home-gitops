@@ -18,7 +18,7 @@ spec:
       tag: "1.17.0-alpine"
     persistence:
       enabled: true
-      size: 32Gi
+      existingClaim: bitwarden
     bitwardenrs:
       signupsAllowed: true
       admin:
