@@ -11,4 +11,6 @@ server:
       hosts:
       - vault.$DOMAIN
     hosts:
-      - host: vault.$DOMAIN
+    - host: vault.$DOMAIN
+      paths:
+      - /
