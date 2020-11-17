@@ -1,0 +1,16 @@
+ingress:
+  enabled: true
+  hosts:
+  - host: functions.$DOMAIN1
+    serviceName: gateway
+    servicePort: 8080
+    path: /
+  annotations:
+    kubernetes.io/ingress.class: "contour"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    ingress.kubernetes.io/force-ssl-redirect: "true"
+    kubernetes.io/tls-acme: "true"
+  tls:
+  - secretName: openfaas
+    hosts:
+    - functions.$DOMAIN1
