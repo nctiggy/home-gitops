@@ -1,0 +1,10 @@
+apiVersion: ricoberger.de/v1alpha1
+kind: VaultSecret
+metadata:
+  name: kasten-helm-values
+  namespace: kasten-io
+spec:
+  keys:
+    - values.yaml
+  path: secrets/katen-io/kasten/kasten-helm-values
+  type: Opaque

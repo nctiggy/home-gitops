@@ -1,0 +1,36 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: k10
+  namespace: kasten-io
+  annotations:
+    fluxcd.io/automated: "false"
+    filter.fluxcd.io/chart-image: semver:^1
+spec:
+  releaseName: k10
+  helmVersion: v3
+  rollback:
+    enable: false
+  chart:
+    repository: https://charts.kasten.io/
+    name: kasten/k10
+    version: 3.0.6
+  values:
+    ingress:
+      create: true
+      class: contour
+      host: backup.$DOMAIN
+      urlPath: /
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt-prod"
+        ingress.kubernetes.io/force-ssl-redirect: "true"
+        kubernetes.io/tls-acme: "true"
+      tls:
+        enabled: true
+        secretName: kasten
+    auth:
+      basicAuth: enabled
+      secretName: kasten-auth
+  valueFileSecrets:
+  - name: "plex-helm-values"

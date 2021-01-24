@@ -164,6 +164,7 @@ EOF
 loadSecretsToVault() {
   message "writing secrets to vault"
   vault kv put secrets/flux/fluxcloud slack_url="$SLACK_WEBHOOK_URL"
+  vault kv put secrets/kasten-io/kasten-auth htpasswd="$KASTEN_AUTH"
   vault kv put secrets/monitoring/grafana/grafana-secret admin-user="$GRAFANA_USERNAME"
   vault kv put secrets/shared-services/bitwarden/bitwarden-admin password="$BITWARDEN_ADMIN_PASSWORD"
   vault kv put secrets/shared-services/bitwarden/bitwarden-smtp password="$SMTP_PASSWORD"
@@ -202,6 +203,7 @@ loadSecretsToVault() {
   kvault "default/unifi/unifi-helm-values.txt"
   kvault "default/zwave2mqtt/zwave2mqtt-helm-values.txt"
   kvault "velero/velero/velero-helm-values.txt"
+  kvault "kasten-io/kasten/kasten-helm-values"
 }
 
 FIRST_RUN=0
