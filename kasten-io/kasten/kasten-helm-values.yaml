@@ -6,7 +6,7 @@ metadata:
 spec:
   keys:
   - values.yaml
-  path: secrets/katen-io/kasten/kasten-helm-values
+  path: secrets/kasten-io/kasten/kasten-helm-values
   type: Opaque
 ---
 apiVersion: ricoberger.de/v1alpha1
@@ -17,5 +17,5 @@ metadata:
 spec:
   keys:
   - htpasswd
-  path: secrets/katen-io/kasten/kasten-auth
+  path: secrets/kasten-io/kasten/kasten-auth
   type: Opaque
