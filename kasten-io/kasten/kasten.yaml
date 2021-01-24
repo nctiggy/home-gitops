@@ -33,4 +33,4 @@ spec:
       basicAuth: enabled
       secretName: kasten-auth
   valueFileSecrets:
-  - name: "plex-helm-values"
+  - name: "kasten-helm-values"
