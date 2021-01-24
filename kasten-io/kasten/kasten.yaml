@@ -17,20 +17,9 @@ spec:
     name: k10
     version: 3.0.6
   values:
-    ingress:
-      create: true
-      class: contour
-      host: backup.$DOMAIN
-      urlPath: /
-      annotations:
-        cert-manager.io/cluster-issuer: "letsencrypt-prod"
-        ingress.kubernetes.io/force-ssl-redirect: "true"
-        kubernetes.io/tls-acme: "true"
-      tls:
-        enabled: true
-        secretName: kasten
     auth:
-      basicAuth: enabled
+      basicAuth:
+        enabled: true
       secretName: kasten-auth
   valueFileSecrets:
   - name: "kasten-helm-values"
