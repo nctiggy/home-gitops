@@ -20,6 +20,6 @@ spec:
     auth:
       basicAuth:
         enabled: true
-      secretName: kasten-auth
+        secretName: kasten-auth
   valueFileSecrets:
   - name: "kasten-helm-values"
