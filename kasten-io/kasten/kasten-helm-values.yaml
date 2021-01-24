@@ -5,6 +5,17 @@ metadata:
   namespace: kasten-io
 spec:
   keys:
-    - values.yaml
+  - values.yaml
   path: secrets/katen-io/kasten/kasten-helm-values
+  type: Opaque
+---
+apiVersion: ricoberger.de/v1alpha1
+kind: VaultSecret
+metadata:
+  name: kasten-auth
+  namespace: kasten-io
+spec:
+  keys:
+  - htpasswd
+  path: secrets/katen-io/kasten/kasten-auth
   type: Opaque

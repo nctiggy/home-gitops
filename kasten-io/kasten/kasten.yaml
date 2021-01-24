@@ -14,7 +14,7 @@ spec:
     enable: false
   chart:
     repository: https://charts.kasten.io/
-    name: kasten/k10
+    name: k10
     version: 3.0.6
   values:
     ingress:
