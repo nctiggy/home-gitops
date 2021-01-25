@@ -2,7 +2,6 @@ ingress:
   create: true
   class: contour
   host: backup.$DOMAIN
-  urlPath: "/k10"
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
     ingress.kubernetes.io/force-ssl-redirect: "true"
