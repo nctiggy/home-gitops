@@ -19,7 +19,7 @@ spec:
   values:
     image:
       repository: linuxserver/heimdall
-      tag: "2.2.2-ls113"
+      tag: "2.2.2-ls114"
     persistence:
       config:
         enabled: true
