@@ -15,11 +15,11 @@ spec:
   chart:
     repository: https://k8s-at-home.com/charts/
     name: sonarr
-    version: 6.0.2
+    version: 8.3.0
   values:
     sonarr:
       image:
-        tag: "preview-version-3.0.4.1091"
+        tag: "version-3.0.4.993"
       env:
         TZ: "America/Los_Angeles"
       persistence:
