@@ -15,11 +15,11 @@ spec:
   chart:
     repository: https://k8s-at-home.com/charts/
     name: nzbget
-    version: 5.0.1
+    version: 7.4.0
   values:
     nzbget:
       image:
-        tag: "testing-version-v21.1-r2311"
+        tag: "version-v21.0"
       timezone: "America/Los_Angeles"
       persistence:
         config:
