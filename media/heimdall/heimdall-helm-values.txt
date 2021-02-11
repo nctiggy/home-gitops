@@ -13,5 +13,11 @@ ingress:
     hosts:
     - homepage.$DOMAIN1
   hosts:
-  - homepage.$DOMAIN
-  - homepage.$DOMAIN1
+  - host: homepage.$DOMAIN
+    paths:
+    - path: /
+      pathType: Prefix
+  - host: homepage.$DOMAIN1
+    paths:
+    - path: /
+      pathType: Prefix
