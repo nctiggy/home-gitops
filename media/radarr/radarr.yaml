@@ -15,7 +15,7 @@ spec:
   chart:
     repository: https://k8s-at-home.com/charts/
     name: radarr
-    version: 6.0.2
+    version: 8.4.0
   values:
     radarr:
       image:
