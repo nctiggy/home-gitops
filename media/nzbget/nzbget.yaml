@@ -17,24 +17,23 @@ spec:
     name: nzbget
     version: 7.4.0
   values:
-    nzbget:
-      image:
-        tag: "version-v21.0"
-      timezone: "America/Los_Angeles"
-      persistence:
-        config:
-          enabled: true
-          existingClaim: nzbget
-          skipuninstall: true
-        downloads:
-          enabled: true
-          existingClaim: nfs-share
-      additionalVolumes:
-      - name: downloads
-        persistentVolumeClaim:
-          claimName: nfs-share
-      additionalVolumeMounts:
-      - name: downloads
-        mountPath: /downloads
+    image:
+      tag: "version-v21.0"
+    timezone: "America/Los_Angeles"
+    persistence:
+      config:
+        enabled: true
+        existingClaim: nzbget
+        skipuninstall: true
+      downloads:
+        enabled: true
+        existingClaim: nfs-share
+    additionalVolumes:
+    - name: downloads
+      persistentVolumeClaim:
+        claimName: nfs-share
+    additionalVolumeMounts:
+    - name: downloads
+      mountPath: /downloads
   valueFileSecrets:
   - name: "nzbget-helm-values"

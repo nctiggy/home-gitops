@@ -1,0 +1,29 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: contour
+  namespace: projectcontour
+  annotations:
+    fluxcd.io/automated: "false"
+    filter.fluxcd.io/chart-image: regex:^(2+\.[0-9]+\.[0-9]+-ls.*)$
+spec:
+  releaseName: contour
+  helmVersion: v3
+  rollback:
+    enable: true
+  chart:
+    repository: https://charts.bitnami.com/bitnami
+    name: contour
+    version: 4.3.0
+  values:
+    image:
+      repository: linuxserver/heimdall
+      tag: "version-2.2.2"
+    persistence:
+      config:
+        enabled: true
+        existingClaim: "heimdall-config"
+        skipuninstall: true
+  valueFileSecrets:
+  - name: "heimdall-helm-values"

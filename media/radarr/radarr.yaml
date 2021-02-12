@@ -17,18 +17,17 @@ spec:
     name: radarr
     version: 8.4.0
   values:
-    radarr:
-      image:
-        tag: "3.0.1.4259-ls90"
-      env:
-        TZ: "America/Los_Angeles"
-      persistence:
-        config:
-          enabled: true
-          existingClaim: radarr
-          skipuninstall: true
-        media:
-          enabled: true
-          existingClaim: nfs-share
+    image:
+      tag: "3.0.1.4259-ls90"
+    env:
+      TZ: "America/Los_Angeles"
+    persistence:
+      config:
+        enabled: true
+        existingClaim: radarr
+        skipuninstall: true
+      media:
+        enabled: true
+        existingClaim: nfs-share
   valueFileSecrets:
   - name: "radarr-helm-values"

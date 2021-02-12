@@ -17,18 +17,17 @@ spec:
     name: sonarr
     version: 8.3.0
   values:
-    sonarr:
-      image:
-        tag: "version-3.0.4.993"
-      env:
-        TZ: "America/Los_Angeles"
-      persistence:
-        config:
-          enabled: true
-          existingClaim: sonarr
-          skipuninstall: true
-        media:
-          enabled: true
-          existingClaim: nfs-share
+    image:
+      tag: "version-3.0.4.993"
+    env:
+      TZ: "America/Los_Angeles"
+    persistence:
+      config:
+        enabled: true
+        existingClaim: sonarr
+        skipuninstall: true
+      media:
+        enabled: true
+        existingClaim: nfs-share
   valueFileSecrets:
   - name: "sonarr-helm-values"
