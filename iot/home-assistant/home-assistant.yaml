@@ -23,7 +23,7 @@ spec:
       config:
         enabled: true
         skipuninstall: true
-      #      existingClaim: home-assistant
+        existingClaim: home-assistant-config
     service:
       type: LoadBalancer
       loadBalancerIP: 192.168.0.53
