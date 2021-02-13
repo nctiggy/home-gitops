@@ -14,13 +14,15 @@ spec:
   chart:
     repository: https://k8s-at-home.com/charts/
     name: home-assistant
-    version: 2.5.2
+    version: 5.5.1
   values:
     image:
       repository: homeassistant/home-assistant
       tag: 2021.2.3
     persistence:
-      enabled: true
+      config:
+        enabled: true
+        skipuninstall: true
       #      existingClaim: home-assistant
     service:
       type: LoadBalancer
