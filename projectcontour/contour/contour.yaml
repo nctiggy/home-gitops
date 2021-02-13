@@ -15,15 +15,4 @@ spec:
   chart:
     repository: https://charts.bitnami.com/bitnami
     name: contour
-    version: 4.3.0
-  values:
-    image:
-      repository: linuxserver/heimdall
-      tag: "version-2.2.2"
-    persistence:
-      config:
-        enabled: true
-        existingClaim: "heimdall-config"
-        skipuninstall: true
-  valueFileSecrets:
-  - name: "heimdall-helm-values"
+    version: 4.1.2
