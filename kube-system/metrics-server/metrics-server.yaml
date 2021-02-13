@@ -15,3 +15,7 @@ spec:
     version: 5.5.1
     repository: https://charts.bitnami.com/bitnami
     name: metrics-server
+  values:
+    extraArgs:
+      kubelet-insecure-tls: true
+      kubelet-preferred-address-types: InternalIP
