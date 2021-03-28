@@ -70,7 +70,7 @@ spec:
         - name: SEED
           value: "-6981104862809678893"
         - name: WORLD
-          value: "https://download2331.mediafire.com/bfm1nm4ksqmg/a4yac16frng6qo2/Minecraft+Guide+-+wattles+ep+100.zip"
+          value: "http://download2347.mediafire.com/mw4jacdwnyog/a4yac16frng6qo2/Minecraft+Guide+-+wattles+ep+100.zip"
         - name: ONLINE_MODE
           value: "FALSE"
         - name: VERSION
