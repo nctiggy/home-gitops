@@ -82,22 +82,22 @@ spec:
           name: bedrock
         - containerPort: 25565
           name: java
-        readinessProbe:
-          exec:
-            command:
-            - mc-monitor
-            - localhost
-            - ping
-          initialDelaySeconds: 5
-          periodSeconds: 5
-        livenessProbe:
-          exec:
-            command:
-            - mc-monitor
-            - localhost
-            - ping
-          initialDelaySeconds: 5
-          periodSeconds: 5
+            #        readinessProbe:
+            #          exec:
+            #            command:
+            #            - mc-monitor
+            #            - localhost
+            #            - ping
+            #          initialDelaySeconds: 5
+            #          periodSeconds: 5
+            #        livenessProbe:
+            #          exec:
+            #            command:
+            #            - mc-monitor
+            #            - localhost
+            #            - ping
+            #          initialDelaySeconds: 5
+            #          periodSeconds: 5
         volumeMounts:
         - name: mc-data-wattles
           mountPath: /data
