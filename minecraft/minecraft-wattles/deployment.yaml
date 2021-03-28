@@ -85,7 +85,7 @@ spec:
         readinessProbe:
           exec:
             command:
-            - mcstatus
+            - mc-monitor
             - localhost
             - ping
           initialDelaySeconds: 5
@@ -93,7 +93,7 @@ spec:
         livenessProbe:
           exec:
             command:
-            - mcstatus
+            - mc-monitor
             - localhost
             - ping
           initialDelaySeconds: 5
