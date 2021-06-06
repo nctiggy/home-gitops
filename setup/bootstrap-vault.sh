@@ -196,6 +196,7 @@ loadSecretsToVault() {
   kvault "media/plex/plex-helm-values.txt"
   kvault "media/radarr/radarr-helm-values.txt"
   kvault "media/sonarr/sonarr-helm-values.txt"
+  kvault "media/calibre/calibre-helm-values.txt"
   kvault "media/heimdall/heimdall-helm-values.txt"
   kvault "harbor/harbor/harbor-helm-values.txt"
   kvault "default/rtorrent-flood/rtorrent-flood-helm-values.txt"

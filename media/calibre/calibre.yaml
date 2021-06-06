@@ -2,30 +2,26 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: radarr
+  name: calibre
   namespace: media
   annotations:
     fluxcd.io/automated: "false"
-    filter.fluxcd.io/chart-image: semver:^3
+    filter.fluxcd.io/chart-image: glob:v21.*
 spec:
-  releaseName: radarr
+  releaseName: calibre
   helmVersion: v3
   rollback:
     enable: true
   chart:
     repository: https://k8s-at-home.com/charts/
-    name: radarr
-    version: 11.1.0
+    name: calibre
+    version: 3.3.0
   values:
-    env:
-      TZ: "America/Los_Angeles"
+    timezone: "America/Los_Angeles"
     persistence:
       config:
         enabled: true
-        existingClaim: radarr
+        existingClaim: calibre
         skipuninstall: true
-      media:
-        enabled: true
-        existingClaim: nfs-share
   valueFileSecrets:
-  - name: "radarr-helm-values"
+  - name: "calibre-helm-values"
