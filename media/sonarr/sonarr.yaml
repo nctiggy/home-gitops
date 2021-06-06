@@ -5,7 +5,7 @@ metadata:
   name: sonarr
   namespace: media
   annotations:
-    fluxcd.io/automated: "true"
+    fluxcd.io/automated: "false"
     filter.fluxcd.io/chart-image: semver:^3.
 spec:
   releaseName: sonarr
@@ -15,10 +15,8 @@ spec:
   chart:
     repository: https://k8s-at-home.com/charts/
     name: sonarr
-    version: 8.3.0
+    version: 11.1.0
   values:
-    image:
-      tag: "version-3.0.4.993"
     env:
       TZ: "America/Los_Angeles"
     persistence:
