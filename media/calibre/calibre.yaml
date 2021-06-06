@@ -17,7 +17,8 @@ spec:
     name: calibre
     version: 3.3.0
   values:
-    timezone: "America/Los_Angeles"
+    env:
+      TZ: "America/Los_Angeles"
     persistence:
       config:
         enabled: true
