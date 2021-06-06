@@ -19,7 +19,7 @@ spec:
     server:
       image:
         repository: "vault"
-        tag: "1.7.0"
+        tag: "1.7.2"
         # Overrides the default Image Pull Policy
         pullPolicy: IfNotPresent
       updateStrategyType: "RollingUpdate"
