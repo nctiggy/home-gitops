@@ -8,9 +8,9 @@ ingress:
   tls:
   - secretName: calibre-web
     hosts:
-    - calibre.$DOMAIN
+    - books.$DOMAIN
   hosts:
-  - host: calibre.$DOMAIN
+  - host: books.$DOMAIN
     paths:
     - path: /
       pathType: Prefix

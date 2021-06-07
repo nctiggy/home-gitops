@@ -2,7 +2,7 @@ env:
   GUAC_USER: $CALIBRE_USER
   GUAC_PASS: $CALIBRE_PASS
 ingress:
-  enabled: true
+  enabled: false
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     ingress.kubernetes.io/force-ssl-redirect: "true"

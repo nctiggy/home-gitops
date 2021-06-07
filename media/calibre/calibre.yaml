@@ -22,7 +22,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: calibre
+        existingClaim: nfs-share
         skipuninstall: true
   valueFileSecrets:
   - name: "calibre-helm-values"

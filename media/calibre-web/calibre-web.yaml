@@ -24,5 +24,9 @@ spec:
         enabled: true
         existingClaim: calibre-web
         skipuninstall: true
+      books:
+        enabled: true
+        existingClaim: nfs-share
+        skipuninstall: true
   valueFileSecrets:
   - name: "calibre-web-helm-values"
