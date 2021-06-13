@@ -64,7 +64,7 @@ spec:
         app: mc-survival
     spec:
       containers:
-      - image: itzg/minecraft-server
+      - image: itzg/minecraft-server:java15
         name: mc-survival
         imagePullPolicy: Always
         env:
@@ -90,7 +90,7 @@ spec:
         - name: ONLINE_MODE
           value: "FALSE"
         - name: VERSION
-          value: "1.17"
+          value: "1.16.4"
         - name: MEMORY
           value: "8G"
         ports:
