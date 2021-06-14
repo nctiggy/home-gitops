@@ -1,0 +1,17 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: rabbitmq
+  namespace: work
+spec:
+  releaseName: rabbitmq
+  rollback:
+    enable: true
+  chart:
+    repository: https://charts.bitnami.com/bitnami
+    name: rabbitmq
+    version: 8.15.3
+  values:
+    service:
+      type: LoadBalancer
