@@ -31,6 +31,7 @@ spec:
       - image: busybox
         name: mc-stage
         imagePullPolicy: Always
+        command: ["/bin/sh", "-ec", "while :; do echo '.'; sleep 5 ; done"]
         volumeMounts:
         - name: mc-data-survival
           mountPath: /data
