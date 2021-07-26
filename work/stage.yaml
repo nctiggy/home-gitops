@@ -3,7 +3,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mc-data-survival
-  namespace: minecraft
+  namespace: work
 spec:
   accessModes:
   - ReadWriteOnce
@@ -17,7 +17,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mc-stage
-  namespace: minecraft
+  namespace: work
 spec:
   selector:
     matchLabels:
