@@ -15,4 +15,4 @@ spec:
   chart:
     repository: https://charts.bitnami.com/bitnami
     name: contour
-    version: 4.1.2
+    version: 5.0.2
