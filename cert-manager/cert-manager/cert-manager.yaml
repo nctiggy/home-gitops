@@ -15,9 +15,9 @@ spec:
   chart:
     repository: https://charts.jetstack.io
     name: cert-manager
-    version: 1.0.3
+    version: 1.4.0
   values:
     image:
       repository: quay.io/jetstack/cert-manager-controller
-      tag: "v1.0.3"
+      tag: "v1.4.0"
     installCRDs: true
