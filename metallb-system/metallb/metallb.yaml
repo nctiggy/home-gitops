@@ -15,7 +15,7 @@ spec:
   chart:
     repository: https://metallb.github.io/metallb
     name: metallb
-    version: 0.0.0
+    version: 0.10.2
   values:
     configInline:
       address-pools:
