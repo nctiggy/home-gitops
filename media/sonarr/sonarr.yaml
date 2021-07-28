@@ -24,6 +24,7 @@ spec:
         enabled: true
         existingClaim: sonarr
         skipuninstall: true
+        accessMode: ReadWriteOnce
       media:
         enabled: true
         existingClaim: nfs-share
