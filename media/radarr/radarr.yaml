@@ -35,3 +35,4 @@ spec:
         size: 64Gi
       media:
         enabled: true
+        existingClaim: nfs-share
