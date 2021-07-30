@@ -1,0 +1,37 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: radarr
+  namespace: media
+spec:
+  releaseName: radarr
+  chart:
+    repository: https://k8s-at-home.com/charts/
+    version: 12.3.0
+    name: radarr
+  values:
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-prod"
+          ingress.kubernetes.io/force-ssl-redirect: "true"
+          kubernetes.io/ingress.class: contour
+          kubernetes.io/tls-acme: "true"
+        tls:
+        - secretName: radarr
+          hosts:
+          - movies.web.bluehairfreak.com
+        hosts:
+        - host: movies.web.bluehairfreak.com
+          paths:
+          - path: /
+            pathType: Prefix
+    persistence:
+      config:
+        enabled: true
+        skipuninstall: true
+        size: 64Gi
+      media:
+        enabled: true
