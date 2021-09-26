@@ -15,7 +15,7 @@ spec:
     version: 2.3.0
   values:
     image:
-      tag: "1.21.1.3876-3c3adfcb4"
+      tag: "1.24.1.4931-1a38e63c6"
     timezone: "Americas/Los_Angeles"
     allowedNetworks:
     - 127.0.0.1
