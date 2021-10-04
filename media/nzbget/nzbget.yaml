@@ -26,5 +26,9 @@ spec:
       downloads:
         enabled: true
         existingClaim: nfs-share
+    podSecurityContext:
+      runAsUser: 568
+      runAsGroup: 568
+      fsGroup: 568
   valueFileSecrets:
   - name: "nzbget-helm-values"
