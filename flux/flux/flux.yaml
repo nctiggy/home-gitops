@@ -17,7 +17,7 @@ spec:
   values:
     image:
       repository: docker.io/fluxcd/flux
-      tag: 1.24.1
+      tag: 1.24.2
       pullPolicy: IfNotPresent
     git:
       url: "git@github.com:nctiggy/home-gitops"
